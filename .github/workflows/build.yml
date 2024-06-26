@@ -1,0 +1,28 @@
+name: Build and test with Java CI and Maven
+
+on:
+  workflow_dispatch:
+  push:
+  pull_request:
+
+jobs:
+  release:
+    name: Build and test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      # Setup the Java version
+      - name: Setup Java
+        uses: actions/setup-java@v2
+        with:
+          java-version: 17
+          distribution: 'zulu'
+
+      # Build and run tests
+      - name: Maven package
+        run: |
+          mvn -ntp -B package

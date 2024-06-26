@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "test_mode": true,
+    "event_name": "subscription_updated",
+    "webhook_id": "36c4d6ea-c859-4f3c-998b-b4426917af44"
+  },
+  "data": {
+    "type": "subscriptions",
+    "id": "421953",
+    "attributes": {
+      "store_id": 91257,
+      "customer_id": 3083767,
+      "order_id": 2925880,
+      "order_item_id": 2881059,
+      "product_id": 278897,
+      "variant_id": 394420,
+      "product_name": "MelodyMatrix (1 year subscription)",
+      "variant_name": "Default",
+      "user_name": "Frank Delporte",
+      "user_email": "frank@webtechie.be",
+      "status": "active",
+      "status_formatted": "Active",
+      "card_brand": "visa",
+      "card_last_four": "4242",
+      "pause": null,
+      "cancelled": false,
+      "trial_ends_at": null,
+      "billing_anchor": 19,
+      "first_subscription_item": {
+        "id": 355942,
+        "subscription_id": 421953,
+        "price_id": 571912,
+        "quantity": 1,
+        "is_usage_based": false,
+        "created_at": "2024-06-19T14:08:15.000000Z",
+        "updated_at": "2024-06-19T14:08:15.000000Z"
+      },
+      "urls": {
+        "update_payment_method": "https:\/\/codewriter.lemonsqueezy.com\/subscription\/421953\/payment-details?expires=1718892525&signature=e32127630d73cf6e0bb535ee7fe05785c654c5508c4c238f2f2d9a6f4e9ce15c",
+        "customer_portal": "https:\/\/codewriter.lemonsqueezy.com\/billing?expires=1718827725&test_mode=1&user=2476730&signature=9413295faed7ab86bd550afcbfbbaddd84dbfec1be2b06c054b81c83835ce616",
+        "customer_portal_update_subscription": "https:\/\/codewriter.lemonsqueezy.com\/billing\/421953\/update?expires=1718892525&user=2476730&signature=5957cb1a330927b75adc04115bf012a29daff112d62f4576198a1fc3d44fe82e"
+      },
+      "renews_at": "2024-06-19T14:08:13.000000Z",
+      "ends_at": null,
+      "created_at": "2024-06-19T14:08:10.000000Z",
+      "updated_at": "2024-06-19T14:08:14.000000Z",
+      "test_mode": true
+    },
+    "relationships": {
+      "store": {
+        "links": {
+          "related": "https:\/\/api.lemonsqueezy.com\/v1\/subscriptions\/421953\/store",
+          "self": "https:\/\/api.lemonsqueezy.com\/v1\/subscriptions\/421953\/relationships\/store"
+        }
+      },
+      "customer": {
+        "links": {
+          "related": "https:\/\/api.lemonsqueezy.com\/v1\/subscriptions\/421953\/customer",
+          "self": "https:\/\/api.lemonsqueezy.com\/v1\/subscriptions\/421953\/relationships\/customer"
+        }
+      },
+      "order": {
+        "links": {
+          "related": "https:\/\/api.lemonsqueezy.com\/v1\/subscriptions\/421953\/order",
+          "self": "https:\/\/api.lemonsqueezy.com\/v1\/subscriptions\/421953\/relationships\/order"
+        }
+      },
+      "order-item": {
+        "links": {
+          "related": "https:\/\/api.lemonsqueezy.com\/v1\/subscriptions\/421953\/order-item",
+          "self": "https:\/\/api.lemonsqueezy.com\/v1\/subscriptions\/421953\/relationships\/order-item"
+        }
+      },
+      "product": {
+        "links": {
+          "related": "https:\/\/api.lemonsqueezy.com\/v1\/subscriptions\/421953\/product",
+          "self": "https:\/\/api.lemonsqueezy.com\/v1\/subscriptions\/421953\/relationships\/product"
+        }
+      },
+      "variant": {
+        "links": {
+          "related": "https:\/\/api.lemonsqueezy.com\/v1\/subscriptions\/421953\/variant",
+          "self": "https:\/\/api.lemonsqueezy.com\/v1\/subscriptions\/421953\/relationships\/variant"
+        }
+      },
+      "subscription-items": {
+        "links": {
+          "related": "https:\/\/api.lemonsqueezy.com\/v1\/subscriptions\/421953\/subscription-items",
+          "self": "https:\/\/api.lemonsqueezy.com\/v1\/subscriptions\/421953\/relationships\/subscription-items"
+        }
+      },
+      "subscription-invoices": {
+        "links": {
+          "related": "https:\/\/api.lemonsqueezy.com\/v1\/subscriptions\/421953\/subscription-invoices",
+          "self": "https:\/\/api.lemonsqueezy.com\/v1\/subscriptions\/421953\/relationships\/subscription-invoices"
+        }
+      }
+    },
+    "links": {
+      "self": "https:\/\/api.lemonsqueezy.com\/v1\/subscriptions\/421953"
+    }
+  }
+}

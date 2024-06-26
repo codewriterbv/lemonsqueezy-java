@@ -1,0 +1,14 @@
+{
+  "meta": {
+    "test_mode": true,
+    "event_name": "order_created",
+    "webhook_id": "c3c57ee7-4dc7-4ff6-875e-63455b3cf829"
+  },
+  "data": {
+    "type": "orders",
+    "id": "2925880",
+    "attributes": {},
+    "relationships": {},
+    "links": {}
+  }
+}

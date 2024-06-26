@@ -1,0 +1,69 @@
+{
+  "meta": {
+    "test_mode": true,
+    "event_name": "subscription_payment_success",
+    "webhook_id": "f61d9089-9ca1-4753-9b9b-19710c27d0a9"
+  },
+  "data": {
+    "type": "subscription-invoices",
+    "id": "1134198",
+    "attributes": {
+      "store_id": 91257,
+      "subscription_id": 421953,
+      "customer_id": 3083767,
+      "user_name": "Frank Delporte",
+      "user_email": "frank@webtechie.be",
+      "billing_reason": "initial",
+      "card_brand": "visa",
+      "card_last_four": "4242",
+      "currency": "EUR",
+      "currency_rate": "1.07424309",
+      "status": "paid",
+      "status_formatted": "Paid",
+      "refunded": false,
+      "refunded_at": null,
+      "subtotal": 1999,
+      "discount_total": 0,
+      "tax": 0,
+      "tax_inclusive": true,
+      "total": 1999,
+      "subtotal_usd": 2147,
+      "discount_total_usd": 0,
+      "tax_usd": 0,
+      "total_usd": 2147,
+      "subtotal_formatted": "\u20ac19.99",
+      "discount_total_formatted": "\u20ac0.00",
+      "tax_formatted": "\u20ac0.00",
+      "total_formatted": "\u20ac19.99",
+      "urls": {
+        "invoice_url": "https:\/\/app.lemonsqueezy.com\/my-orders\/62acd246-fb68-46f0-94d1-5879182773b7\/subscription-invoice\/1134198?signature=db595e2150c25df90634bb92008059e4efe71fb893a0212254e4e1f557d31825"
+      },
+      "created_at": "2024-06-19T14:08:13.000000Z",
+      "updated_at": "2024-06-19T14:08:15.000000Z",
+      "test_mode": true
+    },
+    "relationships": {
+      "store": {
+        "links": {
+          "related": "https:\/\/api.lemonsqueezy.com\/v1\/subscription-invoices\/1134198\/store",
+          "self": "https:\/\/api.lemonsqueezy.com\/v1\/subscription-invoices\/1134198\/relationships\/store"
+        }
+      },
+      "subscription": {
+        "links": {
+          "related": "https:\/\/api.lemonsqueezy.com\/v1\/subscription-invoices\/1134198\/subscription",
+          "self": "https:\/\/api.lemonsqueezy.com\/v1\/subscription-invoices\/1134198\/relationships\/subscription"
+        }
+      },
+      "customer": {
+        "links": {
+          "related": "https:\/\/api.lemonsqueezy.com\/v1\/subscription-invoices\/1134198\/customer",
+          "self": "https:\/\/api.lemonsqueezy.com\/v1\/subscription-invoices\/1134198\/relationships\/customer"
+        }
+      }
+    },
+    "links": {
+      "self": "https:\/\/api.lemonsqueezy.com\/v1\/subscription-invoices\/1134198"
+    }
+  }
+}

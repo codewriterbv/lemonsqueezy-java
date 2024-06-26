@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "test_mode": true,
+    "event_name": "license_key_created",
+    "webhook_id": "919979c4-6ca1-430d-8ca5-0a083e9a2c92"
+  },
+  "data": {
+    "type": "license-keys",
+    "id": "536156",
+    "attributes": {
+      "store_id": 91257,
+      "customer_id": 3083767,
+      "order_id": 2925880,
+      "order_item_id": 2881059,
+      "product_id": 278897,
+      "user_name": "Frank Delporte",
+      "user_email": "frank@webtechie.be",
+      "key": "7A5472DB-C5B9-459E-9F6D-FAE467F0B28E",
+      "key_short": "XXXX-FAE467F0B28E",
+      "activation_limit": 1,
+      "instances_count": null,
+      "disabled": false,
+      "status": "inactive",
+      "status_formatted": "Inactive",
+      "expires_at": null,
+      "created_at": "2024-06-19T14:08:15.000000Z",
+      "updated_at": "2024-06-19T14:08:15.000000Z",
+      "test_mode": true
+    },
+    "relationships": {
+      "store": {
+        "links": {
+          "related": "https:\/\/api.lemonsqueezy.com\/v1\/license-keys\/536156\/store",
+          "self": "https:\/\/api.lemonsqueezy.com\/v1\/license-keys\/536156\/relationships\/store"
+        }
+      },
+      "customer": {
+        "links": {
+          "related": "https:\/\/api.lemonsqueezy.com\/v1\/license-keys\/536156\/customer",
+          "self": "https:\/\/api.lemonsqueezy.com\/v1\/license-keys\/536156\/relationships\/customer"
+        }
+      },
+      "order": {
+        "links": {
+          "related": "https:\/\/api.lemonsqueezy.com\/v1\/license-keys\/536156\/order",
+          "self": "https:\/\/api.lemonsqueezy.com\/v1\/license-keys\/536156\/relationships\/order"
+        }
+      },
+      "order-item": {
+        "links": {
+          "related": "https:\/\/api.lemonsqueezy.com\/v1\/license-keys\/536156\/order-item",
+          "self": "https:\/\/api.lemonsqueezy.com\/v1\/license-keys\/536156\/relationships\/order-item"
+        }
+      },
+      "product": {
+        "links": {
+          "related": "https:\/\/api.lemonsqueezy.com\/v1\/license-keys\/536156\/product",
+          "self": "https:\/\/api.lemonsqueezy.com\/v1\/license-keys\/536156\/relationships\/product"
+        }
+      },
+      "license-key-instances": {
+        "links": {
+          "related": "https:\/\/api.lemonsqueezy.com\/v1\/license-keys\/536156\/license-key-instances",
+          "self": "https:\/\/api.lemonsqueezy.com\/v1\/license-keys\/536156\/relationships\/license-key-instances"
+        }
+      }
+    },
+    "links": {
+      "self": "https:\/\/api.lemonsqueezy.com\/v1\/license-keys\/536156"
+    }
+  }
+}

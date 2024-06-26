@@ -1,0 +1,23 @@
+project:
+  name: app
+  version: 1.0.0-SNAPSHOT
+  description: Lemon Squeezy Java API
+  longDescription: Java SDK to interact with the Lemon Squeezy API
+  website: https://github.com/codewriterbv/lemonsqueezy-java
+  authors:
+    - Duke
+  license: MIT-license
+  java:
+    groupId: be.codewriter
+    version: 17
+  extraProperties:
+    inceptionYear: 2024
+
+release:
+  github:
+    owner: codewriterbv
+
+distributions:
+  app:
+    artifacts:
+      - path: path/to/{{distributionName}}-{{projectVersion}}.zip
