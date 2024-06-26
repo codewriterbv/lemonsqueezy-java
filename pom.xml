@@ -55,7 +55,7 @@
         <repository>
             <id>github</id>
             <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/be.codewriter/lemonsqueezy-java</url>
+            <url>https://maven.pkg.github.com/codewriterbv/lemonsqueezy-java</url>
         </repository>
     </distributionManagement>
 

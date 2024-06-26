@@ -29,6 +29,6 @@ jobs:
 
       # Publish to GitHub repository
       - name: Publish package
-        run: mvn -Dmaven.test.skip=true deploy -Dregistry=https://maven.pkg.github.com/be.codewriter --batch-mode
+        run: mvn -Dmaven.test.skip=true --batch-mode deploy -Dregistry=https://maven.pkg.github.com/be.codewriter
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
