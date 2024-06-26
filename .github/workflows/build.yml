@@ -7,7 +7,7 @@ on:
 
 jobs:
   release:
-    name: Build and test
+    name: Build, test, and publish to GitHub repository
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -29,6 +29,6 @@ jobs:
 
       # Publish to GitHub repository
       - name: Publish package
-        run: mvn -Dmaven.test.skip=true --batch-mode deploy
+        run: mvn -Dmaven.test.skip=true deploy -Dregistry=https://maven.pkg.github.com/be.codewriter --batch-mode
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
