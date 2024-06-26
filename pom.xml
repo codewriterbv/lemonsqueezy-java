@@ -97,50 +97,12 @@
                 <!-- JUnit 5 requires Surefire version 2.22.0 or higher -->
                 <version>2.22.2</version>
             </plugin>
-
-            <plugin>
-                <groupId>org.jreleaser</groupId>
-                <artifactId>jreleaser-maven-plugin</artifactId>
-                <version>${jreleaser.version}</version>
-                <configuration>
-                    <jreleaser>
-                        <project>
-                            <copyright>pi4j.com</copyright>
-                        </project>
-                        <release>
-                            <github>
-                                <overwrite>true</overwrite>
-                            </github>
-                        </release>
-                        <!-- https://jreleaser.org/guide/latest/examples/maven/maven-central.html -->
-                        <signing>
-                            <active>ALWAYS</active>
-                            <armored>true</armored>
-                        </signing>
-                        <deploy>
-                            <maven>
-                                <nexus2>
-                                    <maven-central>
-                                        <active>ALWAYS</active>
-                                        <url>https://oss.sonatype.org/service/local</url>
-                                        <closeRepository>true</closeRepository>
-                                        <releaseRepository>true</releaseRepository>
-                                        <stagingRepositories>target/staging-deploy</stagingRepositories>
-                                    </maven-central>
-                                </nexus2>
-                            </maven>
-                        </deploy>
-                    </jreleaser>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
 
     <profiles>
-        <!-- https://jreleaser.org/guide/latest/examples/maven/staging-artifacts.html -->
         <profile>
             <id>publication</id>
-
             <build>
                 <plugins>
                     <plugin>
