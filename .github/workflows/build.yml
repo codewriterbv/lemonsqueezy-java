@@ -26,3 +26,9 @@ jobs:
       - name: Maven package
         run: |
           mvn -ntp -B package
+
+      # Publish to GitHub repository
+      - name: Publish package
+        run: mvn -Dmaven.test.skip=true --batch-mode deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
