@@ -1,0 +1,25 @@
+{
+  "type": "customers",
+  "id": "1",
+  "attributes": {
+    "store_id": 1,
+    "name": "Luke Skywalker",
+    "email": "lukeskywalker@example.com",
+    "status": "subscribed",
+    "city": "Brussels",
+    "region": "Earth",
+    "country": "BE",
+    "total_revenue_currency": 84332,
+    "mrr": 1999,
+    "status_formatted": "Subscribed",
+    "country_formatted": "Belgium",
+    "total_revenue_currency_formatted": "$843.32",
+    "mrr_formatted": "$19.99",
+    "urls": {
+      "customer_portal": "https://my-store.lemonsqueezy.com/billing?expires=1666869343&signature=82ae290ceac8edd4190c82825dd73a8743346d894a8ddbc4898b97eb96d105a5"
+    },
+    "created_at": "2022-12-01T13:01:07.000000Z",
+    "updated_at": "2022-12-09T09:05:21.000000Z",
+    "test_mode": false
+  }
+}
