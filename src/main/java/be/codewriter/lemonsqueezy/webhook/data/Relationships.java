@@ -1,92 +1,93 @@
 package be.codewriter.lemonsqueezy.webhook.data;
 
+import be.codewriter.lemonsqueezy.webhook.item.RelationshipItem;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Relationships {
     @JsonProperty("store")
-    private Relationship store;
+    private RelationshipItem store;
     @JsonProperty("customer")
-    private Relationship customer;
+    private RelationshipItem customer;
     @JsonProperty("order")
-    private Relationship order;
+    private RelationshipItem order;
     @JsonProperty("order-item")
-    private Relationship orderItem;
+    private RelationshipItem orderItem;
     @JsonProperty("product")
-    private Relationship product;
+    private RelationshipItem product;
     @JsonProperty("variant")
-    private Relationship variant;
+    private RelationshipItem variant;
     @JsonProperty("subscription-items")
-    private Relationship subscriptionItems;
+    private RelationshipItem subscriptionItems;
     @JsonProperty("subscription-invoices")
-    private Relationship subscriptionInvoices;
+    private RelationshipItem subscriptionInvoices;
 
     public Relationships() {
         // For JSON parsing
     }
 
-    public Relationship getStore() {
+    public RelationshipItem getStore() {
         return store;
     }
 
-    public void setStore(Relationship store) {
+    public void setStore(RelationshipItem store) {
         this.store = store;
     }
 
-    public Relationship getCustomer() {
+    public RelationshipItem getCustomer() {
         return customer;
     }
 
-    public void setCustomer(Relationship customer) {
+    public void setCustomer(RelationshipItem customer) {
         this.customer = customer;
     }
 
-    public Relationship getOrder() {
+    public RelationshipItem getOrder() {
         return order;
     }
 
-    public void setOrder(Relationship order) {
+    public void setOrder(RelationshipItem order) {
         this.order = order;
     }
 
-    public Relationship getOrderItem() {
+    public RelationshipItem getOrderItem() {
         return orderItem;
     }
 
-    public void setOrderItem(Relationship orderItem) {
+    public void setOrderItem(RelationshipItem orderItem) {
         this.orderItem = orderItem;
     }
 
-    public Relationship getProduct() {
+    public RelationshipItem getProduct() {
         return product;
     }
 
-    public void setProduct(Relationship product) {
+    public void setProduct(RelationshipItem product) {
         this.product = product;
     }
 
-    public Relationship getVariant() {
+    public RelationshipItem getVariant() {
         return variant;
     }
 
-    public void setVariant(Relationship variant) {
+    public void setVariant(RelationshipItem variant) {
         this.variant = variant;
     }
 
-    public Relationship getSubscriptionItems() {
+    public RelationshipItem getSubscriptionItems() {
         return subscriptionItems;
     }
 
-    public void setSubscriptionItems(Relationship subscriptionItems) {
+    public void setSubscriptionItems(RelationshipItem subscriptionItems) {
         this.subscriptionItems = subscriptionItems;
     }
 
-    public Relationship getSubscriptionInvoices() {
+    public RelationshipItem getSubscriptionInvoices() {
         return subscriptionInvoices;
     }
 
-    public void setSubscriptionInvoices(Relationship subscriptionInvoices) {
+    public void setSubscriptionInvoices(RelationshipItem subscriptionInvoices) {
         this.subscriptionInvoices = subscriptionInvoices;
     }
 }

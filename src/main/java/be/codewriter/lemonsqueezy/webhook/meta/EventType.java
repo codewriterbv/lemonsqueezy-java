@@ -21,7 +21,8 @@ public enum EventType {
     SUBSCRIPTION_PAYMENT_RECOVERED("subscription_payment_recovered"),
     SUBSCRIPTION_PAYMENT_REFUNDED("subscription_payment_refunded"),
     SUBSCRIPTION_LICENSE_KEY_CREATED("license_key_created"),
-    SUBSCRIPTION_LICENSE_KEY_UPDATED("license_key_updated");
+    SUBSCRIPTION_LICENSE_KEY_UPDATED("license_key_updated"),
+    UNDEFINED("");
 
     private final String label;
 
@@ -36,7 +37,7 @@ public enum EventType {
                 return eventType;
             }
         }
-        throw new IllegalArgumentException("Invalid event type value: " + value);
+        return UNDEFINED;
     }
 
     @JsonValue

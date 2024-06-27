@@ -1,7 +1,7 @@
-package be.codewriter.lemonsqueezy.webhook.data.attributes;
+package be.codewriter.lemonsqueezy.webhook.attributes;
 
-import be.codewriter.lemonsqueezy.webhook.Urls;
-import be.codewriter.lemonsqueezy.webhook.data.item.OrderItem;
+import be.codewriter.lemonsqueezy.generic.Urls;
+import be.codewriter.lemonsqueezy.webhook.item.OrderItem;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -19,11 +19,13 @@ public class OrderAttributes {
     private Long customerId;
     @JsonProperty("order_number")
     private Long orderNumber;
+    @JsonProperty("identifier")
     private UUID identifier;
     @JsonProperty("user_name")
     private String userName;
     @JsonProperty("user_email")
     private String userEmail;
+    @JsonProperty("currency")
     private String currency;
     @JsonProperty("currency_rate")
     private String currencyRate;
@@ -61,6 +63,7 @@ public class OrderAttributes {
     private Boolean refunded;
     @JsonProperty("first_order_item")
     private OrderItem firstOrderItem;
+    @JsonProperty("urls")
     private Urls urls;
     @JsonProperty("created_at")
     private LocalDateTime createdAt;

@@ -1,14 +1,15 @@
-package be.codewriter.lemonsqueezy.webhook.data;
+package be.codewriter.lemonsqueezy.webhook.item;
 
+import be.codewriter.lemonsqueezy.generic.Links;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Relationship {
+public class RelationshipItem {
     @JsonProperty("links")
     private Links links;
 
-    public Relationship() {
+    public RelationshipItem() {
         // For JSON parsing
     }
 

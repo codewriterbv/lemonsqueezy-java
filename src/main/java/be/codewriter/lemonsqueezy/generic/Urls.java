@@ -1,4 +1,4 @@
-package be.codewriter.lemonsqueezy.webhook;
+package be.codewriter.lemonsqueezy.generic;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

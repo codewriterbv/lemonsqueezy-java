@@ -1,5 +1,6 @@
-package be.codewriter.lemonsqueezy.webhook.meta;
+package be.codewriter.lemonsqueezy.generic;
 
+import be.codewriter.lemonsqueezy.webhook.meta.EventType;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
