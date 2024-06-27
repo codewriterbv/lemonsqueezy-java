@@ -1,10 +1,12 @@
 package be.codewriter.lemonsqueezy.generic;
 
+import be.codewriter.lemonsqueezy.store.Store;
 import be.codewriter.lemonsqueezy.user.User;
 import be.codewriter.lemonsqueezy.webhook.data.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 
 /**
  * https://docs.lemonsqueezy.com/help/webhooks#event-types
@@ -13,11 +15,12 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
         use = JsonTypeInfo.Id.NAME,
         property = "type")
 @JsonSubTypes({
-        @JsonSubTypes.Type(value = User.class, name = "users"),
+        @JsonSubTypes.Type(value = LicenseKey.class, name = "license-keys"),
         @JsonSubTypes.Type(value = Order.class, name = "orders"),
+        @JsonSubTypes.Type(value = Store.class, name = "stores"),
         @JsonSubTypes.Type(value = Subscription.class, name = "subscriptions"),
         @JsonSubTypes.Type(value = SubscriptionInvoice.class, name = "subscription-invoices"),
-        @JsonSubTypes.Type(value = LicenseKey.class, name = "license-keys"),
+        @JsonSubTypes.Type(value = User.class, name = "users"),
 })
 public abstract class Data {
     @JsonProperty("id")
@@ -65,4 +68,3 @@ public abstract class Data {
         this.links = links;
     }
 }
-

@@ -19,7 +19,7 @@ import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class WebhookMessageTest extends BaseTest {
+class WebhookMessageTest extends BaseTest {
 
     @Test
     void shouldParseMinimal() throws IOException {

@@ -14,6 +14,8 @@ public class Meta {
     private EventType type;
     @JsonProperty("webhook_id")
     private UUID id;
+    @JsonProperty("page")
+    private Page page;
 
     public Meta() {
         // For JSON parsing
@@ -41,5 +43,13 @@ public class Meta {
 
     public void setId(UUID id) {
         this.id = id;
+    }
+
+    public Page getPage() {
+        return page;
+    }
+
+    public void setPage(Page page) {
+        this.page = page;
     }
 }

@@ -1,0 +1,21 @@
+{
+  "type": "stores",
+  "id": "1",
+  "attributes": {
+    "name": "My Store",
+    "slug": "my-store",
+    "domain": "my-store.lemonsqueezy.com",
+    "url": "https:\/\/demo-store.lemonsqueezy.com",
+    "avatar_url": "https:\/\/app.lemonsqueezy.com\/storage\/avatars\/stores\/1\/czTkMkDm4Vfb8PZehb5c29XFCm9JZyJx0AjEZP7s.png",
+    "plan": "fresh",
+    "country": "US",
+    "country_nicename": "United States",
+    "currency": "USD",
+    "total_sales": 1,
+    "total_revenue": 999,
+    "thirty_day_sales": 0,
+    "thirty_day_revenue": 0,
+    "created_at": "2021-05-24T14:15:06.000000Z",
+    "updated_at": "2021-06-15T10:03:14.000000Z"
+  }
+}

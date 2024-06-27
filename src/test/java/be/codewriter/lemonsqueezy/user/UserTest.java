@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class UserTest extends BaseTest {
+class UserTest extends BaseTest {
 
     @Test
     void shouldParseUser() throws IOException {

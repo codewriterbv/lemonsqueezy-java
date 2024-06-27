@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 public enum DataType {
     LICENSE_KEYS("license-keys"),
     ORDERS("orders"),
+    STORES("stores"),
     SUBSCRIPTIONS("subscriptions"),
     SUBSCRIPTION_INVOICES("subscription-invoices"),
     USERS("users");

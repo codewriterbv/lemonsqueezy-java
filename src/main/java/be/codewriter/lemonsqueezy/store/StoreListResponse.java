@@ -1,16 +1,19 @@
-package be.codewriter.lemonsqueezy.user;
+package be.codewriter.lemonsqueezy.store;
 
 import be.codewriter.lemonsqueezy.generic.JsonApi;
 import be.codewriter.lemonsqueezy.generic.Links;
 import be.codewriter.lemonsqueezy.generic.Meta;
+import be.codewriter.lemonsqueezy.webhook.data.Relationships;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.List;
 
 /**
  * https://docs.lemonsqueezy.com/api/users#the-user-object
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UserResponse {
+public class StoreListResponse {
     @JsonProperty("meta")
     private Meta meta;
     @JsonProperty("links")
@@ -18,9 +21,11 @@ public class UserResponse {
     @JsonProperty("jsonapi")
     private JsonApi jsonApi;
     @JsonProperty("data")
-    private User user;
+    private List<Store> stores;
+    @JsonProperty("relationships")
+    private Relationships relationships;
 
-    public UserResponse() {
+    public StoreListResponse() {
         // For JSON parsing
     }
 
@@ -48,11 +53,19 @@ public class UserResponse {
         this.jsonApi = jsonApi;
     }
 
-    public User getUser() {
-        return user;
+    public List<Store> getStores() {
+        return stores;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setStores(List<Store> stores) {
+        this.stores = stores;
+    }
+
+    public Relationships getRelationships() {
+        return relationships;
+    }
+
+    public void setRelationships(Relationships relationships) {
+        this.relationships = relationships;
     }
 }
