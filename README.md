@@ -34,11 +34,12 @@ registerModule(new JavaTimeModule());
     ```
 * **Webhooks**, example implementation with a Spring Boot Restcontroller:
   ```java
- @RestController
- @RequestMapping("/api/callback")
- @PermitAll
- public class CallbackController {
- 
+
+@RestController
+@RequestMapping("/api/callback")
+@PermitAll
+public class CallbackController {
+
     private final ObjectMapper objectMapper = new ObjectMapper();
  
     public CallbackController() {
@@ -55,7 +56,9 @@ registerModule(new JavaTimeModule());
 
         // 3. Do something with the webhookMessage, depending on our use-case
     }
- }
+
+}
+
 ```
 
 ## Using this Library in your Project
