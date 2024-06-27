@@ -20,6 +20,8 @@ objectMapper.registerModule(new JavaTimeModule());
 
 ### Implemented Objects
 
+**THIS IS WORK-IN-PROGRESS...**
+
 * **Customer**
     ```java
     Customer user = objectMapper.readValue(customerJson, Customer.class);
