@@ -15,9 +15,7 @@ Initiate the ObjectMapper like this:
 
 ```java
 ObjectMapper objectMapper = new ObjectMapper();
-objectMapper.
-
-registerModule(new JavaTimeModule());
+objectMapper.registerModule(new JavaTimeModule());
 ```
 
 ### Implemented Objects
@@ -33,33 +31,29 @@ registerModule(new JavaTimeModule());
     );
     ```
 * **Webhooks**, example implementation with a Spring Boot Restcontroller:
-  ```java
-
-@RestController
-@RequestMapping("/api/callback")
-@PermitAll
-public class CallbackController {
-
-    private final ObjectMapper objectMapper = new ObjectMapper();
- 
-    public CallbackController() {
-       // This is needed to parse the timestamps provided in JSON format by Lemon Squeezy
-       objectMapper.registerModule(new JavaTimeModule());
-    }
- 
-    @PostMapping()
-    public void webhook(@RequestBody String message) {
-       // 1. Authenticate the webhook request from Lemon Squeezy using the `X-Signature` header
- 
-       // 2. Parse the payload if the request is authenticated
-       WebhookMessage webhookMessage = objectMapper.readValue(message), WebhookMessage.class)
-
+    ```java
+    @RestController
+    @RequestMapping("/api/callback")
+    @PermitAll
+    public class CallbackController {
+      private final ObjectMapper objectMapper = new ObjectMapper();
+    
+      public CallbackController() {
+         // This is needed to parse the timestamps provided in JSON format by Lemon Squeezy
+         objectMapper.registerModule(new JavaTimeModule());
+      }
+    
+      @PostMapping()
+      public void webhook(@RequestBody String message) {
+        // 1. Authenticate the webhook request from Lemon Squeezy using the `X-Signature` header
+    
+        // 2. Parse the payload if the request is authenticated
+        WebhookMessage webhookMessage = objectMapper.readValue(message), WebhookMessage.class)
+    
         // 3. Do something with the webhookMessage, depending on our use-case
+      }
     }
-
-}
-
-```
+    ```
 
 ## Using this Library in your Project
 
