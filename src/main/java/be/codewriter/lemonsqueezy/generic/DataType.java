@@ -1,4 +1,4 @@
-package be.codewriter.lemonsqueezy.webhook.data;
+package be.codewriter.lemonsqueezy.generic;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -7,10 +7,11 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * https://docs.lemonsqueezy.com/help/webhooks#event-types
  */
 public enum DataType {
+    LICENSE_KEYS("license-keys"),
     ORDERS("orders"),
     SUBSCRIPTIONS("subscriptions"),
     SUBSCRIPTION_INVOICES("subscription-invoices"),
-    LICENSE_KEYS("license-keys");
+    USERS("users");
 
     private final String value;
 

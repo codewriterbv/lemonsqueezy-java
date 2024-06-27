@@ -1,31 +1,25 @@
 package be.codewriter.lemonsqueezy.webhook;
 
-import be.codewriter.lemonsqueezy.webhook.data.*;
-import be.codewriter.lemonsqueezy.webhook.data.attributes.LicenseKeyAttributes;
-import be.codewriter.lemonsqueezy.webhook.data.attributes.OrderAttributes;
-import be.codewriter.lemonsqueezy.webhook.data.attributes.SubscriptionAttributes;
-import be.codewriter.lemonsqueezy.webhook.data.attributes.SubscriptionInvoiceAttributes;
+import be.codewriter.lemonsqueezy.BaseTest;
+import be.codewriter.lemonsqueezy.generic.DataType;
+import be.codewriter.lemonsqueezy.webhook.attributes.LicenseKeyAttributes;
+import be.codewriter.lemonsqueezy.webhook.attributes.OrderAttributes;
+import be.codewriter.lemonsqueezy.webhook.attributes.SubscriptionAttributes;
+import be.codewriter.lemonsqueezy.webhook.attributes.SubscriptionInvoiceAttributes;
+import be.codewriter.lemonsqueezy.webhook.data.LicenseKey;
+import be.codewriter.lemonsqueezy.webhook.data.Order;
+import be.codewriter.lemonsqueezy.webhook.data.Subscription;
+import be.codewriter.lemonsqueezy.webhook.data.SubscriptionInvoice;
 import be.codewriter.lemonsqueezy.webhook.meta.EventType;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class WebhookMessageTest {
-
-    private final ObjectMapper objectMapper = new ObjectMapper();
-
-    public WebhookMessageTest() {
-        objectMapper.registerModule(new JavaTimeModule());
-    }
+public class WebhookMessageTest extends BaseTest {
 
     @Test
     void shouldParseMinimal() throws IOException {
@@ -61,8 +55,8 @@ public class WebhookMessageTest {
                 () -> assertEquals(2925880, attr.getOrderId(), "Data attributes order ID should be equal"),
                 () -> assertEquals(2881059, attr.getOrderItemId(), "Data attributes order item ID should be equal"),
                 () -> assertEquals(278897, attr.getProductId(), "Data attributes product ID should be equal"),
-                () -> assertEquals("Frank Delporte", attr.getUserName(), "Data attributes user name should be equal"),
-                () -> assertEquals("frank@webtechie.be", attr.getUserEmail(), "Data attributes user email should be equal"),
+                () -> assertEquals("Mr. X and Mrs. Y", attr.getUserName(), "Data attributes user name should be equal"),
+                () -> assertEquals("test@company.com", attr.getUserEmail(), "Data attributes user email should be equal"),
                 () -> assertEquals("7A5472DB-C5B9-459E-9F6D-FAE467F0B28E", attr.getKey(), "Data attributes key should be equal"),
                 () -> assertEquals("XXXX-FAE467F0B28E", attr.getKeyShort(), "Data attributes key short should be equal"),
                 () -> assertEquals(1, attr.getActivationLimit(), "Data attributes activation limit should be equal"),
@@ -94,8 +88,8 @@ public class WebhookMessageTest {
                 () -> assertEquals(3083767, attr.getCustomerId(), "Data attributes customer ID should be equal"),
                 () -> assertEquals(UUID.fromString("62acd246-fb68-46f0-94d1-5879182773b7"), attr.getIdentifier(), "Data attributes identifier should be equal"),
                 () -> assertEquals(912571, attr.getOrderNumber(), "Data attributes order number should be equal"),
-                () -> assertEquals("Frank Delporte", attr.getUserName(), "Data attributes user name should be equal"),
-                () -> assertEquals("frank@webtechie.be", attr.getUserEmail(), "Data attributes user email should be equal"),
+                () -> assertEquals("Mr. X and Mrs. Y", attr.getUserName(), "Data attributes user name should be equal"),
+                () -> assertEquals("test@company.com", attr.getUserEmail(), "Data attributes user email should be equal"),
                 () -> assertEquals("\u20ac0.00", attr.getTaxFormatted(), "Data attributes tax formatted should be equal"),
                 () -> assertEquals("\u20ac19.99", attr.getTotalFormatted(), "Data attributes total formatted should be equal"),
                 () -> assertEquals(278897, attr.getFirstOrderItem().getProductId(), "Data attributes first order item product id should be equal"),
@@ -127,8 +121,8 @@ public class WebhookMessageTest {
                 () -> assertEquals(394420, attr.getVariantId(), "Data attributes variant ID should be equal"),
                 () -> assertEquals("MelodyMatrix (1 year subscription)", attr.getProductName(), "Data attributes product name should be equal"),
                 () -> assertEquals("Default", attr.getVariantName(), "Data attributes variant name should be equal"),
-                () -> assertEquals("Frank Delporte", attr.getUserName(), "Data attributes user name should be equal"),
-                () -> assertEquals("frank@webtechie.be", attr.getUserEmail(), "Data attributes user email should be equal"),
+                () -> assertEquals("Mr. X and Mrs. Y", attr.getUserName(), "Data attributes user name should be equal"),
+                () -> assertEquals("test@company.com", attr.getUserEmail(), "Data attributes user email should be equal"),
                 () -> assertEquals("active", attr.getStatus(), "Data attributes status should be equal"),
                 () -> assertEquals("Active", attr.getStatusFormatted(), "Data attributes status formatted should be equal"),
                 () -> assertEquals("visa", attr.getCardBrand(), "Data attributes card brand should be equal"),
@@ -197,8 +191,8 @@ public class WebhookMessageTest {
                 () -> assertEquals(394420, attr.getVariantId(), "Data attributes variant ID should be equal"),
                 () -> assertEquals("MelodyMatrix (1 year subscription)", attr.getProductName(), "Data attributes product name should be equal"),
                 () -> assertEquals("Default", attr.getVariantName(), "Data attributes variant name should be equal"),
-                () -> assertEquals("Frank Delporte", attr.getUserName(), "Data attributes user name should be equal"),
-                () -> assertEquals("frank@webtechie.be", attr.getUserEmail(), "Data attributes user email should be equal"),
+                () -> assertEquals("Mr. X and Mrs. Y", attr.getUserName(), "Data attributes user name should be equal"),
+                () -> assertEquals("test@company.com", attr.getUserEmail(), "Data attributes user email should be equal"),
                 () -> assertEquals("active", attr.getStatus(), "Data attributes status should be equal"),
                 () -> assertEquals("Active", attr.getStatusFormatted(), "Data attributes status formatted should be equal"),
                 () -> assertEquals("visa", attr.getCardBrand(), "Data attributes card brand should be equal"),
@@ -232,8 +226,8 @@ public class WebhookMessageTest {
                 () -> assertEquals(91257, attr.getStoreId(), "Data attributes store ID should be equal"),
                 () -> assertEquals(421953, attr.getSubscriptionId(), "Data attributes order number should be equal"),
                 () -> assertEquals(3083767, attr.getCustomerId(), "Data attributes customer ID should be equal"),
-                () -> assertEquals("Frank Delporte", attr.getUserName(), "Data attributes user name should be equal"),
-                () -> assertEquals("frank@webtechie.be", attr.getUserEmail(), "Data attributes user email should be equal"),
+                () -> assertEquals("Mr. X and Mrs. Y", attr.getUserName(), "Data attributes user name should be equal"),
+                () -> assertEquals("test@company.com", attr.getUserEmail(), "Data attributes user email should be equal"),
                 () -> assertEquals("initial", attr.getBillingReason(), "Data attributes billing reason should be equal"),
                 () -> assertEquals("visa", attr.getCardBrand(), "Data attributes card brand should be equal"),
                 () -> assertEquals("4242", attr.getCardLastFour(), "Data attributes card last four should be equal"),
@@ -258,9 +252,5 @@ public class WebhookMessageTest {
                 () -> assertEquals(LocalDateTime.parse("2024-06-19T14:08:15.000000"), attr.getUpdatedAt(), "Data attributes updated at should be equal"),
                 () -> assertTrue(attr.getTestMode(), "Data attributes test mode should be true")
         );
-    }
-
-    private String loadJson(String file) throws IOException {
-        return new String(Files.readAllBytes(Paths.get(getClass().getResource(file).getPath())), StandardCharsets.UTF_8);
     }
 }

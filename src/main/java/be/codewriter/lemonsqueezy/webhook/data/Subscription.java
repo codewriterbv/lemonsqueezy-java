@@ -1,6 +1,8 @@
 package be.codewriter.lemonsqueezy.webhook.data;
 
-import be.codewriter.lemonsqueezy.webhook.data.attributes.SubscriptionAttributes;
+import be.codewriter.lemonsqueezy.generic.Data;
+import be.codewriter.lemonsqueezy.generic.DataType;
+import be.codewriter.lemonsqueezy.webhook.attributes.SubscriptionAttributes;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 /**

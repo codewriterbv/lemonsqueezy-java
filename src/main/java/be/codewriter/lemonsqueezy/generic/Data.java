@@ -1,5 +1,7 @@
-package be.codewriter.lemonsqueezy.webhook.data;
+package be.codewriter.lemonsqueezy.generic;
 
+import be.codewriter.lemonsqueezy.user.User;
+import be.codewriter.lemonsqueezy.webhook.data.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -11,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
         use = JsonTypeInfo.Id.NAME,
         property = "type")
 @JsonSubTypes({
+        @JsonSubTypes.Type(value = User.class, name = "users"),
         @JsonSubTypes.Type(value = Order.class, name = "orders"),
         @JsonSubTypes.Type(value = Subscription.class, name = "subscriptions"),
         @JsonSubTypes.Type(value = SubscriptionInvoice.class, name = "subscription-invoices"),
