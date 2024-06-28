@@ -13,6 +13,10 @@ public class Links {
     private String first;
     @JsonProperty("last")
     private String last;
+    @JsonProperty("next")
+    private String next;
+    @JsonProperty("prev")
+    private String previous;
 
     public Links() {
         // For JSON parsing
@@ -48,5 +52,21 @@ public class Links {
 
     public void setLast(String last) {
         this.last = last;
+    }
+
+    public String getNext() {
+        return next;
+    }
+
+    public void setNext(String next) {
+        this.next = next;
+    }
+
+    public String getPrevious() {
+        return previous;
+    }
+
+    public void setPrevious(String previous) {
+        this.previous = previous;
     }
 }
