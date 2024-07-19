@@ -1,12 +1,11 @@
 package be.codewriter.lemonsqueezy.store;
 
+import be.codewriter.lemonsqueezy.BaseAttributes;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.time.LocalDateTime;
-
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class StoreAttributes {
+public class StoreAttributes extends BaseAttributes {
     @JsonProperty("name")
     private String name;
     @JsonProperty("slug")
@@ -33,10 +32,6 @@ public class StoreAttributes {
     private Double thirtyDaySales;
     @JsonProperty("thirty_day_revenue")
     private Double thirtyDayRevenue;
-    @JsonProperty("created_at")
-    private LocalDateTime createdAt;
-    @JsonProperty("updated_at")
-    private LocalDateTime updatedAt;
 
     public StoreAttributes() {
         // For JSON parsing
@@ -144,21 +139,5 @@ public class StoreAttributes {
 
     public void setThirtyDayRevenue(Double thirtyDayRevenue) {
         this.thirtyDayRevenue = thirtyDayRevenue;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
     }
 }

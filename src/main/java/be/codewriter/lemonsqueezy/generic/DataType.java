@@ -7,6 +7,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  * https://docs.lemonsqueezy.com/help/webhooks#event-types
  */
 public enum DataType {
+    CHECKOUT("checkouts"),
     CUSTOMERS("customers"),
     LICENSE_KEYS("license-keys"),
     ORDERS("orders"),

@@ -1,0 +1,62 @@
+{
+  "type": "checkouts",
+  "id": "edc0158c-794a-445d-bfad-24ab66baeb01",
+  "attributes": {
+    "store_id": 1,
+    "variant_id": 98,
+    "custom_price": null,
+    "product_options": {
+      "name": "Product X",
+      "description": "Product description",
+      "media": [],
+      "redirect_url": "",
+      "receipt_button_text": "",
+      "receipt_link_url": "",
+      "receipt_thank_you_note": "",
+      "enabled_variants": []
+    },
+    "checkout_options": {
+      "embed": false,
+      "media": true,
+      "logo": true,
+      "desc": true,
+      "discount": true,
+      "dark": false,
+      "subscription_preview": true,
+      "button_color": "#7047EB"
+    },
+    "checkout_data": {
+      "email": "test@test.com",
+      "name": "",
+      "billing_address": {
+        "country": "",
+        "zip": ""
+      },
+      "tax_number": "",
+      "discount_code": "",
+      "custom": [],
+      "variant_quantities": []
+    },
+    "preview": {
+      "currency": "USD",
+      "currency_rate": 1.23456,
+      "subtotal": 5000,
+      "discount_total": 0,
+      "tax": 0,
+      "total": 5000,
+      "subtotal_usd": 5000,
+      "discount_total_usd": 0,
+      "tax_usd": 0,
+      "total_usd": 5000,
+      "subtotal_formatted": "$50.00",
+      "discount_total_formatted": "$50.00",
+      "tax_formatted": "$0.00",
+      "total_formatted": "$5.00"
+    },
+    "expires_at": null,
+    "created_at": "2022-10-14T10:59:00.000000Z",
+    "updated_at": "2022-10-14T10:59:00.000000Z",
+    "test_mode": false,
+    "url": "https://my-store.lemonsqueezy.com/checkout/custom/edc0158c-794a-445d-bfad-24ab66baeb01?signature=5ad42361086c156d0976dce023536716ef114ac73163920526813d2a95e22453"
+  }
+}

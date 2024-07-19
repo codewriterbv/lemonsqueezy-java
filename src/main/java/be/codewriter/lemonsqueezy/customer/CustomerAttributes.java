@@ -1,17 +1,13 @@
 package be.codewriter.lemonsqueezy.customer;
 
+import be.codewriter.lemonsqueezy.BaseAttributes;
 import be.codewriter.lemonsqueezy.generic.Urls;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.time.LocalDateTime;
-
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CustomerAttributes {
-    @JsonProperty("test_mode")
-    private Boolean testMode;
-    @JsonProperty("store_id")
-    private Long storeId;
+public class CustomerAttributes extends BaseAttributes {
+
     @JsonProperty("name")
     private String name;
     @JsonProperty("email")
@@ -38,29 +34,9 @@ public class CustomerAttributes {
     private String monthlyRecurringRevenueFormatted;
     @JsonProperty("urls")
     private Urls urls;
-    @JsonProperty("created_at")
-    private LocalDateTime createdAt;
-    @JsonProperty("updated_at")
-    private LocalDateTime updatedAt;
 
     public CustomerAttributes() {
         // For JSON parsing
-    }
-
-    public Boolean getTestMode() {
-        return testMode;
-    }
-
-    public void setTestMode(Boolean testMode) {
-        this.testMode = testMode;
-    }
-
-    public Long getStoreId() {
-        return storeId;
-    }
-
-    public void setStoreId(Long storeId) {
-        this.storeId = storeId;
     }
 
     public String getName() {
@@ -165,21 +141,5 @@ public class CustomerAttributes {
 
     public void setUrls(Urls urls) {
         this.urls = urls;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
     }
 }

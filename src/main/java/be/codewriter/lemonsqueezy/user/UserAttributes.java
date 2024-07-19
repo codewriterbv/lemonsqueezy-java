@@ -1,12 +1,11 @@
 package be.codewriter.lemonsqueezy.user;
 
+import be.codewriter.lemonsqueezy.BaseAttributes;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.time.LocalDateTime;
-
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UserAttributes {
+public class UserAttributes extends BaseAttributes {
     @JsonProperty("name")
     private String name;
     @JsonProperty("email")
@@ -17,12 +16,6 @@ public class UserAttributes {
     private String avatarUrl;
     @JsonProperty("has_custom_avatar")
     private Boolean hasCustomAvatar;
-    // TODO this is different to all other use cases with created_at, to check...
-    @JsonProperty("createdAt")
-    private LocalDateTime createdAt;
-    // TODO this is different to all other use cases with updated_at, to check...
-    @JsonProperty("updatedAt")
-    private LocalDateTime updatedAt;
 
     public UserAttributes() {
         // For JSON parsing
@@ -66,21 +59,5 @@ public class UserAttributes {
 
     public void setHasCustomAvatar(Boolean hasCustomAvatar) {
         this.hasCustomAvatar = hasCustomAvatar;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
     }
 }
