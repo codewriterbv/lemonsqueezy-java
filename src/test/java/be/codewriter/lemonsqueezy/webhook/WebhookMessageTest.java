@@ -2,14 +2,14 @@ package be.codewriter.lemonsqueezy.webhook;
 
 import be.codewriter.lemonsqueezy.BaseTest;
 import be.codewriter.lemonsqueezy.generic.DataType;
-import be.codewriter.lemonsqueezy.license.LicenseKeyAttributes;
-import be.codewriter.lemonsqueezy.order.OrderAttributes;
-import be.codewriter.lemonsqueezy.subscription.SubscriptionAttributes;
-import be.codewriter.lemonsqueezy.subscription.SubscriptionInvoiceAttributes;
 import be.codewriter.lemonsqueezy.license.LicenseKey;
+import be.codewriter.lemonsqueezy.license.LicenseKeyAttributes;
 import be.codewriter.lemonsqueezy.order.Order;
+import be.codewriter.lemonsqueezy.order.OrderAttributes;
 import be.codewriter.lemonsqueezy.subscription.Subscription;
+import be.codewriter.lemonsqueezy.subscription.SubscriptionAttributes;
 import be.codewriter.lemonsqueezy.subscription.SubscriptionInvoice;
+import be.codewriter.lemonsqueezy.subscription.SubscriptionInvoiceAttributes;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
