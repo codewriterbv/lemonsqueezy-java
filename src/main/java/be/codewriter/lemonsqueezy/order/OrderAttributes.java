@@ -1,8 +1,9 @@
-package be.codewriter.lemonsqueezy.webhook.attributes;
+package be.codewriter.lemonsqueezy.order;
 
+import be.codewriter.lemonsqueezy.BaseAttributes;
 import be.codewriter.lemonsqueezy.generic.Urls;
-import be.codewriter.lemonsqueezy.webhook.item.OrderItem;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDateTime;
@@ -12,9 +13,9 @@ import java.util.UUID;
  * https://docs.lemonsqueezy.com/api/orders#the-order-object
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class OrderAttributes {
-    @JsonProperty("store_id")
-    private Long storeId;
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class OrderAttributes extends BaseAttributes {
+
     @JsonProperty("customer_id")
     private Long customerId;
     @JsonProperty("order_number")
@@ -65,23 +66,11 @@ public class OrderAttributes {
     private OrderItem firstOrderItem;
     @JsonProperty("urls")
     private Urls urls;
-    @JsonProperty("created_at")
-    private LocalDateTime createdAt;
-    @JsonProperty("updated_at")
-    private LocalDateTime updatedAt;
     @JsonProperty("deleted_at")
     private LocalDateTime deletedAt;
 
     public OrderAttributes() {
         // For JSON parsing
-    }
-
-    public Long getStoreId() {
-        return storeId;
-    }
-
-    public void setStoreId(Long storeId) {
-        this.storeId = storeId;
     }
 
     public Long getCustomerId() {
@@ -290,21 +279,5 @@ public class OrderAttributes {
 
     public void setUrls(Urls urls) {
         this.urls = urls;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
     }
 }

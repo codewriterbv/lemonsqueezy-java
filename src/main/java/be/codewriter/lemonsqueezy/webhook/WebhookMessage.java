@@ -3,12 +3,14 @@ package be.codewriter.lemonsqueezy.webhook;
 import be.codewriter.lemonsqueezy.generic.Data;
 import be.codewriter.lemonsqueezy.generic.Meta;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * https://docs.lemonsqueezy.com/help/webhooks#webhook-requests
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class WebhookMessage {
     @JsonProperty("meta")
     private Meta meta;

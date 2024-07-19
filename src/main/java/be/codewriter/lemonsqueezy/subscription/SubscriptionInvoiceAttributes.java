@@ -1,17 +1,17 @@
-package be.codewriter.lemonsqueezy.webhook.attributes;
+package be.codewriter.lemonsqueezy.subscription;
 
+import be.codewriter.lemonsqueezy.BaseAttributes;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
-import java.time.LocalDateTime;
 
 /**
  * https://docs.lemonsqueezy.com/api/subscription-invoices#the-subscription-invoice-object
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SubscriptionInvoiceAttributes {
-    @JsonProperty("store_id")
-    private Long storeId;
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class SubscriptionInvoiceAttributes extends BaseAttributes {
+
     @JsonProperty("subscription_id")
     private Long subscriptionId;
     @JsonProperty("customer_id")
@@ -62,24 +62,12 @@ public class SubscriptionInvoiceAttributes {
     private Double totalUsd;
     @JsonProperty("total_formatted")
     private String totalformatted;
-    @JsonProperty("created_at")
-    private LocalDateTime createdAt;
-    @JsonProperty("updated_at")
-    private LocalDateTime updatedAt;
 
     @JsonProperty("test_mode")
     private Boolean testMode;
 
     public SubscriptionInvoiceAttributes() {
         // For JSON parsing
-    }
-
-    public Long getStoreId() {
-        return storeId;
-    }
-
-    public void setStoreId(Long storeId) {
-        this.storeId = storeId;
     }
 
     public Long getSubscriptionId() {
@@ -280,22 +268,6 @@ public class SubscriptionInvoiceAttributes {
 
     public void setTotalformatted(String totalformatted) {
         this.totalformatted = totalformatted;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
     }
 
     public Boolean getTestMode() {

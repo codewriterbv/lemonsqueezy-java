@@ -3,11 +3,13 @@ package be.codewriter.lemonsqueezy.checkout;
 import be.codewriter.lemonsqueezy.BaseAttributes;
 import be.codewriter.lemonsqueezy.product.ProductOptions;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDateTime;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class CheckoutAttributes extends BaseAttributes {
 
     @JsonProperty("variant_id")

@@ -2,9 +2,13 @@ package be.codewriter.lemonsqueezy.generic;
 
 import be.codewriter.lemonsqueezy.checkout.Checkout;
 import be.codewriter.lemonsqueezy.customer.Customer;
+import be.codewriter.lemonsqueezy.license.LicenseKey;
+import be.codewriter.lemonsqueezy.order.Order;
+import be.codewriter.lemonsqueezy.relationship.Relationships;
 import be.codewriter.lemonsqueezy.store.Store;
+import be.codewriter.lemonsqueezy.subscription.Subscription;
+import be.codewriter.lemonsqueezy.subscription.SubscriptionInvoice;
 import be.codewriter.lemonsqueezy.user.User;
-import be.codewriter.lemonsqueezy.webhook.data.*;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;

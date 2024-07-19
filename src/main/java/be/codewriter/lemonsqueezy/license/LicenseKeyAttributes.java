@@ -1,6 +1,8 @@
-package be.codewriter.lemonsqueezy.webhook.attributes;
+package be.codewriter.lemonsqueezy.license;
 
+import be.codewriter.lemonsqueezy.BaseAttributes;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDateTime;
@@ -9,9 +11,8 @@ import java.time.LocalDateTime;
  * https://docs.lemonsqueezy.com/api/license-keys#the-license-key-object
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class LicenseKeyAttributes {
-    @JsonProperty("store_id")
-    private Long storeId;
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class LicenseKeyAttributes extends BaseAttributes {
     @JsonProperty("customer_id")
     private Long customerId;
     @JsonProperty("order_id")
@@ -40,21 +41,9 @@ public class LicenseKeyAttributes {
     private String statusFormatted;
     @JsonProperty("expires_at")
     private LocalDateTime expiresAt;
-    @JsonProperty("created_at")
-    private LocalDateTime createdAt;
-    @JsonProperty("updated_at")
-    private LocalDateTime updatedAt;
 
     public LicenseKeyAttributes() {
         // For JSON parsing
-    }
-
-    public Long getStoreId() {
-        return storeId;
-    }
-
-    public void setStoreId(Long storeId) {
-        this.storeId = storeId;
     }
 
     public Long getCustomerId() {
@@ -167,21 +156,5 @@ public class LicenseKeyAttributes {
 
     public void setExpiresAt(LocalDateTime expiresAt) {
         this.expiresAt = expiresAt;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
     }
 }

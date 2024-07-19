@@ -2,9 +2,11 @@ package be.codewriter.lemonsqueezy.checkout;
 
 import be.codewriter.lemonsqueezy.BaseAttributes;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class CheckoutOptions extends BaseAttributes {
 
     @JsonProperty("embed")
@@ -20,9 +22,9 @@ public class CheckoutOptions extends BaseAttributes {
     @JsonProperty("dark")
     private Boolean dark;
     @JsonProperty("subscription_preview")
-    private Boolean subscription_preview;
+    private Boolean subscriptionPreview;
     @JsonProperty("button_color")
-    private String button_color;
+    private String buttonColor;
 
     public CheckoutOptions() {
         // For JSON parsing
@@ -76,19 +78,19 @@ public class CheckoutOptions extends BaseAttributes {
         this.dark = dark;
     }
 
-    public Boolean getSubscription_preview() {
-        return subscription_preview;
+    public Boolean getSubscriptionPreview() {
+        return subscriptionPreview;
     }
 
-    public void setSubscription_preview(Boolean subscription_preview) {
-        this.subscription_preview = subscription_preview;
+    public void setSubscriptionPreview(Boolean subscriptionPreview) {
+        this.subscriptionPreview = subscriptionPreview;
     }
 
-    public String getButton_color() {
-        return button_color;
+    public String getButtonColor() {
+        return buttonColor;
     }
 
-    public void setButton_color(String button_color) {
-        this.button_color = button_color;
+    public void setButtonColor(String buttonColor) {
+        this.buttonColor = buttonColor;
     }
 }

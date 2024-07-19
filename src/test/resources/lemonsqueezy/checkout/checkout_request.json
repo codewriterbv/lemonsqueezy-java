@@ -1,0 +1,40 @@
+{
+  "type": "checkouts",
+  "attributes": {
+    "customer_price": 50000.0,
+    "product_options": {
+      "redirect_url": "https://test.com"
+    },
+    "checkout_options": {
+      "button_color": "#2DD272"
+    },
+    "checkout_data": {
+      "discount_code": "10PERCENTOFF",
+      "custom": {
+        "user_id": 123
+      }
+    },
+    "expires_at": [
+      2022,
+      10,
+      30,
+      15,
+      20,
+      6
+    ]
+  },
+  "relationships": {
+    "store": {
+      "data": {
+        "type": "stores",
+        "id": "1"
+      }
+    },
+    "variant": {
+      "data": {
+        "type": "variants",
+        "id": "1"
+      }
+    }
+  }
+}

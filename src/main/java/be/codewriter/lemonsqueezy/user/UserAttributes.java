@@ -2,9 +2,11 @@ package be.codewriter.lemonsqueezy.user;
 
 import be.codewriter.lemonsqueezy.BaseAttributes;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class UserAttributes extends BaseAttributes {
     @JsonProperty("name")
     private String name;

@@ -41,7 +41,7 @@
         "billing_address": {},
         "tax_number": "",
         "discount_code": "",
-        "custom": [],
+        "custom": {},
         "variant_quantities": []
       },
       "preview": {

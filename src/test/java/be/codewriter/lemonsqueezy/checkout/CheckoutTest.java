@@ -2,7 +2,13 @@ package be.codewriter.lemonsqueezy.checkout;
 
 import be.codewriter.lemonsqueezy.BaseTest;
 import be.codewriter.lemonsqueezy.generic.DataType;
+import be.codewriter.lemonsqueezy.product.ProductOptions;
+import be.codewriter.lemonsqueezy.relationship.RelationshipData;
+import be.codewriter.lemonsqueezy.relationship.RelationshipItem;
+import be.codewriter.lemonsqueezy.relationship.Relationships;
+import org.json.JSONException;
 import org.junit.jupiter.api.Test;
+import org.skyscreamer.jsonassert.JSONAssert;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -81,5 +87,35 @@ class CheckoutTest extends BaseTest {
                 // Links
                 () -> assertEquals("https://api.lemonsqueezy.com/v1/checkouts/5e8b546c-c561-4a2c-a586-40c18bb2a195", response.getLinks().getSelf(), "Response links self should be equal")
         );
+    }
+
+
+    @Test
+    void shouldGenerateCheckoutRequest() throws IOException, JSONException {
+        var productOptions = new ProductOptions();
+        productOptions.setRedirectUrl("https://test.com");
+
+        var checkoutOptions = new CheckoutOptions();
+        checkoutOptions.setButtonColor("#2DD272");
+
+        var checkoutData = new CheckoutData();
+        checkoutData.setDiscountCode("10PERCENTOFF");
+        checkoutData.setCustom(new CheckoutDataCustom(123));
+
+        CheckoutAttributes attr = new CheckoutAttributes();
+        attr.setCustomerPrice(50000.0);
+        attr.setProductOptions(productOptions);
+        attr.setCheckoutOptions(checkoutOptions);
+        attr.setCheckoutData(checkoutData);
+        attr.setExpiresAt(LocalDateTime.of(2022, 10, 30, 15, 20, 06));
+
+        var relationships = new Relationships();
+        relationships.setStore(new RelationshipItem(new RelationshipData("stores", "1")));
+        relationships.setVariant(new RelationshipItem(new RelationshipData("variants", "1")));
+
+        Checkout checkout = new Checkout(attr);
+        checkout.setRelationships(relationships);
+
+        JSONAssert.assertEquals(makePrettyJson(objectMapper.readValue(loadJson("/lemonsqueezy/checkout/checkout_request.json"), CheckoutResponse.class)), makePrettyJson(checkout), false);
     }
 }

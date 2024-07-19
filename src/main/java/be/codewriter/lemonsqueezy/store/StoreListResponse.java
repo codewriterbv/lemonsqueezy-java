@@ -3,8 +3,9 @@ package be.codewriter.lemonsqueezy.store;
 import be.codewriter.lemonsqueezy.generic.JsonApi;
 import be.codewriter.lemonsqueezy.generic.Links;
 import be.codewriter.lemonsqueezy.generic.Meta;
-import be.codewriter.lemonsqueezy.webhook.data.Relationships;
+import be.codewriter.lemonsqueezy.relationship.Relationships;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.List;
  * https://docs.lemonsqueezy.com/api/users#the-user-object
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class StoreListResponse {
     @JsonProperty("meta")
     private Meta meta;

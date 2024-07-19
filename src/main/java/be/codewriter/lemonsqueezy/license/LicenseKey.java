@@ -1,14 +1,15 @@
-package be.codewriter.lemonsqueezy.webhook.data;
+package be.codewriter.lemonsqueezy.license;
 
 import be.codewriter.lemonsqueezy.generic.Data;
 import be.codewriter.lemonsqueezy.generic.DataType;
-import be.codewriter.lemonsqueezy.webhook.attributes.LicenseKeyAttributes;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 /**
  * https://docs.lemonsqueezy.com/api/license-keys#the-license-key-object
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class LicenseKey extends Data {
     private LicenseKeyAttributes attributes;
 

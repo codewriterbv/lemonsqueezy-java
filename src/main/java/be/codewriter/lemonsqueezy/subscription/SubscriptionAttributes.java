@@ -1,7 +1,8 @@
-package be.codewriter.lemonsqueezy.webhook.attributes;
+package be.codewriter.lemonsqueezy.subscription;
 
-import be.codewriter.lemonsqueezy.webhook.item.SubscriptionItem;
+import be.codewriter.lemonsqueezy.BaseAttributes;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDateTime;
@@ -10,9 +11,9 @@ import java.time.LocalDateTime;
  * https://docs.lemonsqueezy.com/api/subscriptions#the-subscription-object
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class SubscriptionAttributes {
-    @JsonProperty("store_id")
-    private Long storeId;
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class SubscriptionAttributes extends BaseAttributes {
+
     @JsonProperty("customer_id")
     private Long customerId;
     @JsonProperty("order_id")
@@ -55,24 +56,9 @@ public class SubscriptionAttributes {
     private LocalDateTime renewsAt;
     @JsonProperty("ends_at")
     private LocalDateTime endsAt;
-    @JsonProperty("created_at")
-    private LocalDateTime createdAt;
-    @JsonProperty("updated_at")
-    private LocalDateTime updatedAt;
-
-    @JsonProperty("test_mode")
-    private Boolean testMode;
 
     public SubscriptionAttributes() {
         // For JSON parsing
-    }
-
-    public Long getStoreId() {
-        return storeId;
-    }
-
-    public void setStoreId(Long storeId) {
-        this.storeId = storeId;
     }
 
     public Long getCustomerId() {
@@ -233,29 +219,5 @@ public class SubscriptionAttributes {
 
     public void setEndsAt(LocalDateTime endsAt) {
         this.endsAt = endsAt;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    public Boolean getTestMode() {
-        return testMode;
-    }
-
-    public void setTestMode(Boolean testMode) {
-        this.testMode = testMode;
     }
 }

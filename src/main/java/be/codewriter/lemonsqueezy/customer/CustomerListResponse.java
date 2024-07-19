@@ -4,6 +4,7 @@ import be.codewriter.lemonsqueezy.generic.JsonApi;
 import be.codewriter.lemonsqueezy.generic.Links;
 import be.codewriter.lemonsqueezy.generic.Meta;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
@@ -12,6 +13,7 @@ import java.util.List;
  * https://docs.lemonsqueezy.com/api/customers#the-customer-object
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class CustomerListResponse {
     @JsonProperty("meta")
     private Meta meta;

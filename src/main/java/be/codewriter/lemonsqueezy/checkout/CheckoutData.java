@@ -3,11 +3,13 @@ package be.codewriter.lemonsqueezy.checkout;
 import be.codewriter.lemonsqueezy.BaseAttributes;
 import be.codewriter.lemonsqueezy.customer.BillingAddress;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class CheckoutData extends BaseAttributes {
 
     @JsonProperty("email")
@@ -22,7 +24,7 @@ public class CheckoutData extends BaseAttributes {
     private String discountCode;
     @JsonProperty("custom")
     // An object containing any custom data to be passed to the checkout
-    private Object custom;
+    private CheckoutDataCustom custom;
     // A list containing quantity data objects
     @JsonProperty("variant_quantities")
     private List<String> variantQuantities;
@@ -71,11 +73,11 @@ public class CheckoutData extends BaseAttributes {
         this.discountCode = discountCode;
     }
 
-    public Object getCustom() {
+    public CheckoutDataCustom getCustom() {
         return custom;
     }
 
-    public void setCustom(Object custom) {
+    public void setCustom(CheckoutDataCustom custom) {
         this.custom = custom;
     }
 

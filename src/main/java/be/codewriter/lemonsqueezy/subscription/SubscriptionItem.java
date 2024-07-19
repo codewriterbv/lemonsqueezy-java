@@ -1,11 +1,13 @@
-package be.codewriter.lemonsqueezy.webhook.item;
+package be.codewriter.lemonsqueezy.subscription;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDateTime;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class SubscriptionItem {
     @JsonProperty("id")
     private Long id;
