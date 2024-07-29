@@ -85,7 +85,7 @@
     <scm>
         <connection>scm:git:https://github.com/codewriterbv/lemonsqueezy-java.git</connection>
         <developerConnection>scm:git:https://github.com/codewriterbv/lemonsqueezy-java.git</developerConnection>
-        <url>https://github.com/github.com/codewriterbv/lemonsqueezy-java</url>
+        <url>https://github.com/codewriterbv/lemonsqueezy-java</url>
         <tag>HEAD</tag>
     </scm>
 
