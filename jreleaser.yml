@@ -3,7 +3,6 @@ project:
   version: 1.0.0-SNAPSHOT
   description: Lemon Squeezy Java API
   longDescription: Java SDK to interact with the Lemon Squeezy API
-  website: https://github.com/codewriterbv/lemonsqueezy-java
   authors:
     - CodeWriter bv
     - Frank Delporte
