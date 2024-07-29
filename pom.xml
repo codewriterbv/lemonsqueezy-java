@@ -114,27 +114,19 @@
                         <project>
                             <copyright>https://github.com/codewriterbv/lemonsqueezy-java/</copyright>
                         </project>
-                        <release>
-                            <github>
-                                <overwrite>true</overwrite>
-                            </github>
-                        </release>
-                        <!-- https://jreleaser.org/guide/latest/examples/maven/maven-central.html -->
                         <signing>
                             <active>ALWAYS</active>
                             <armored>true</armored>
                         </signing>
                         <deploy>
                             <maven>
-                                <nexus2>
-                                    <maven-central>
+                                <mavenCentral>
+                                    <sonatype>
                                         <active>ALWAYS</active>
-                                        <url>https://oss.sonatype.org/service/local</url>
-                                        <closeRepository>true</closeRepository>
-                                        <releaseRepository>false</releaseRepository>
+                                        <url>https://central.sonatype.com/api/v1/publisher</url>
                                         <stagingRepositories>target/staging-deploy</stagingRepositories>
-                                    </maven-central>
-                                </nexus2>
+                                    </sonatype>
+                                </mavenCentral>
                             </maven>
                         </deploy>
                     </jreleaser>
