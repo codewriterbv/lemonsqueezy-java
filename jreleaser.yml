@@ -5,7 +5,8 @@ project:
   longDescription: Java SDK to interact with the Lemon Squeezy API
   website: https://github.com/codewriterbv/lemonsqueezy-java
   authors:
-    - Duke
+    - CodeWriter bv
+    - Frank Delporte
   license: MIT-license
   java:
     groupId: be.codewriter

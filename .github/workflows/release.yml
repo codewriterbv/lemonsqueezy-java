@@ -5,6 +5,8 @@ name: Release to Maven Repository with Java CI, Maven, and JReleaser
 
 on:
   push:
+    branches:
+      - 'master'
     tags:
       - '*'
 
