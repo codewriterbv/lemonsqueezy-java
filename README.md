@@ -18,19 +18,54 @@ ObjectMapper objectMapper = new ObjectMapper();
 objectMapper.registerModule(new JavaTimeModule());
 ```
 
-### Implemented Objects
+### Implemented Objects and Methods
 
 **THIS IS WORK-IN-PROGRESS...**
 
+#### ApiRequest
+
+Uses `java.net.http.HttpClient` to request data from the Lemon Squeezy API.
+
+```java
+HttpResponse<String> response = ApiRequest.get(ApiEndpoint.STORES, API_BEARER_TOKEN);
+StoreListResponse list = objectMapper.readValue(response.body(), StoreListResponse.class);
+System.out.println("Number of shops: " + list.getStores().size());
+for (Store store : list.getStores()) {
+    System.out.println("ID " + store.getId() + ": " + store.getAttributes().getName());
+}
+```
+
+#### Data Objects
+
+* **Checkout**
+    ```java
+    Checkout checkout = objectMapper.readValue(checkoutJson, Checkout.class);
+    CheckoutAttributes attr = checkout.getAttributes();
+    ```
 * **Customer**
     ```java
     Customer user = objectMapper.readValue(customerJson, Customer.class);
     CustomerAttributes attr = user.getAttributes();
     ```
+* **License**
+    ```java
+    LicenseKey licenseKey = objectMapper.readValue(licenseKeyJson, LicenseKey.class);
+    LicenseKeyAttributes attr = licenseKey.getAttributes();
+    ```
+* **Order**
+    ```java
+    Order order = objectMapper.readValue(orderJson, Order.class);
+    OrderAttributes attr = order.getAttributes();
+    ```
 * **Store**
     ```java
     Store store = objectMapper.readValue(storeJson, Store.class);
     StoreAttributes attr = store.getAttributes();
+    ```
+* **Subscription**
+    ```java
+    Subscription subscription = objectMapper.readValue(subscriptionJson, Subscription.class);
+    SubscriptionAttributes attr = subscription.getAttributes();
     ```
 * **User**
     ```java
@@ -71,11 +106,20 @@ objectMapper.registerModule(new JavaTimeModule());
 
 ### From Maven Repository
 
-Not available yet...
+Released versions are available via the [Maven repository on central.sonatype.com/artifact/be.codewriter/lemonsqueezy-java](https://central.sonatype.com/artifact/be.codewriter/lemonsqueezy-java):
+
+```xml
+<dependency>
+    <groupId>be.codewriter</groupId>
+    <artifactId>lemonsqueezy-java</artifactId>
+    <version>${lemonsqueezy.version}</version>
+</dependency>
+```
+
 
 ### From GitHub Repository
 
-The published versions are available here: https://github.com/codewriterbv/lemonsqueezy-java/packages/2189280
+A new artifact is created with GitHub Actions and is available from [GitHub Packages on github.com/codewriterbv/lemonsqueezy-java/packages/2189280](https://github.com/codewriterbv/lemonsqueezy-java/packages/2189280)
 
 1. Add dependency to your `pom.xml`:
     ```xml
