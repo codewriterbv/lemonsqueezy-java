@@ -55,7 +55,7 @@ jobs:
         uses: trstringer/manual-approval@v1
         with:
           secret: ${{ github.TOKEN }}
-          approvers: FDelporte
+          approvers: core-team
 
       # Post JARs to Maven Central
       # https://jreleaser.org/guide/latest/examples/maven/maven-central.html
