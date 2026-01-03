@@ -9,6 +9,7 @@ import be.codewriter.lemonsqueezy.store.Store;
 import be.codewriter.lemonsqueezy.subscription.Subscription;
 import be.codewriter.lemonsqueezy.subscription.SubscriptionInvoice;
 import be.codewriter.lemonsqueezy.user.User;
+import be.codewriter.lemonsqueezy.variant.Variant;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
@@ -29,6 +30,7 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
         @JsonSubTypes.Type(value = Subscription.class, name = "subscriptions"),
         @JsonSubTypes.Type(value = SubscriptionInvoice.class, name = "subscription-invoices"),
         @JsonSubTypes.Type(value = User.class, name = "users"),
+        @JsonSubTypes.Type(value = Variant.class, name = "variants"),
 })
 public abstract class Data {
     @JsonProperty("id")
