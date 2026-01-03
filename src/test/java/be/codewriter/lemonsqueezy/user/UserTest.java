@@ -13,7 +13,7 @@ class UserTest extends BaseTest {
 
     @Test
     void shouldParseUser() throws IOException {
-        User user = objectMapper.readValue(loadJson("/lemonsqueezy/user/user.json"), User.class);
+        User user = objectMapper.readValue(loadJson("lemonsqueezy/user/user.json"), User.class);
         UserAttributes attr = user.getAttributes();
         assertAll(
                 () -> assertEquals(DataType.USERS, user.getType(), "User type should be equal"),
@@ -32,7 +32,7 @@ class UserTest extends BaseTest {
 
     @Test
     void shouldParseUserResponse() throws IOException {
-        UserResponse response = objectMapper.readValue(loadJson("/lemonsqueezy/user/user_response.json"), UserResponse.class);
+        UserResponse response = objectMapper.readValue(loadJson("lemonsqueezy/user/user_response.json"), UserResponse.class);
         UserAttributes attr = response.getUser().getAttributes();
         assertAll(
                 // Meta

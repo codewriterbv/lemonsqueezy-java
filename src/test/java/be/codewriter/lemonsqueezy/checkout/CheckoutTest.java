@@ -19,7 +19,7 @@ class CheckoutTest extends BaseTest {
 
     @Test
     void shouldParseCheckout() throws IOException {
-        Checkout checkout = objectMapper.readValue(loadJson("/lemonsqueezy/checkout/checkout.json"), Checkout.class);
+        Checkout checkout = objectMapper.readValue(loadJson("lemonsqueezy/checkout/checkout.json"), Checkout.class);
         CheckoutAttributes attr = checkout.getAttributes();
         assertAll(
                 () -> assertEquals(DataType.CHECKOUT, checkout.getType(), "Checkout type should be equal"),
@@ -51,7 +51,7 @@ class CheckoutTest extends BaseTest {
 
     @Test
     void shouldParseCheckoutResponse() throws IOException {
-        CheckoutResponse response = objectMapper.readValue(loadJson("/lemonsqueezy/checkout/checkout_response.json"), CheckoutResponse.class);
+        CheckoutResponse response = objectMapper.readValue(loadJson("lemonsqueezy/checkout/checkout_response.json"), CheckoutResponse.class);
         Checkout checkout = response.getCheckout();
         CheckoutAttributes attr = checkout.getAttributes();
         assertAll(
@@ -116,6 +116,6 @@ class CheckoutTest extends BaseTest {
         Checkout checkout = new Checkout(attr);
         checkout.setRelationships(relationships);
 
-        JSONAssert.assertEquals(makePrettyJson(objectMapper.readValue(loadJson("/lemonsqueezy/checkout/checkout_request.json"), CheckoutResponse.class)), makePrettyJson(checkout), false);
+        JSONAssert.assertEquals(makePrettyJson(objectMapper.readValue(loadJson("lemonsqueezy/checkout/checkout_request.json"), CheckoutResponse.class)), makePrettyJson(checkout), false);
     }
 }
