@@ -13,10 +13,12 @@ import java.net.http.HttpResponse;
 public class LemonSqueezyClient {
     private final ObjectMapper objectMapper = new ObjectMapper();
     private final String apiKey;
+    private final HttpClient client;
 
     public LemonSqueezyClient(final String apiKey) {
         this.apiKey = apiKey;
-        objectMapper.registerModule(new JavaTimeModule());
+        this.objectMapper.registerModule(new JavaTimeModule());
+        this.client = HttpClient.newHttpClient();
     }
 
     public String getApiKey() {
@@ -24,18 +26,15 @@ public class LemonSqueezyClient {
     }
 
     public <T> T get(final ApiEndpoint endpoint, final Class<T> responseType) throws IOException, InterruptedException {
-        HttpResponse<String> response;
-        try (HttpClient client = HttpClient.newHttpClient()) {
-            HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(endpoint.getApiEndpoint()))
-                    .header("Accept", "application/vnd.api+json")
-                    .header("Content-Type", "application/vnd.api+json")
-                    .header("Authorization", "Bearer " + apiKey)
-                    .build();
+        final HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(endpoint.getApiEndpoint()))
+                .header("Accept", "application/vnd.api+json")
+                .header("Content-Type", "application/vnd.api+json")
+                .header("Authorization", "Bearer " + apiKey)
+                .build();
 
-            // 1. Get response as String
-            response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        }
+        // 1. Get response as String
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
         // 2. Deserialize String into the specific type T
         return objectMapper.readValue(response.body(), responseType);
