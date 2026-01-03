@@ -1,6 +1,8 @@
 package be.codewriter.lemonsqueezy.configuration;
 
 import be.codewriter.lemonsqueezy.generic.ApiEndpoint;
+import be.codewriter.lemonsqueezy.response.LemonSqueezyResponse;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 
@@ -26,17 +28,36 @@ public class LemonSqueezyClient {
     }
 
     public <T> T get(final ApiEndpoint endpoint, final Class<T> responseType) throws IOException, InterruptedException {
+        final HttpResponse<String> response = getHttpResponse(endpoint, -1L);
+
+        // Deserialize String into the specific type T
+        return objectMapper.readValue(response.body(), responseType);
+    }
+
+    public <T> T getItem(final ApiEndpoint endpoint, final Long id, final Class<T> responseType) throws IOException, InterruptedException {
+        final HttpResponse<String> response = getHttpResponse(endpoint, id);
+
+        // Deserialize String into the specific type T
+        return objectMapper.readValue(response.body(), responseType);
+    }
+
+    public <T> LemonSqueezyResponse<T> getList(final ApiEndpoint endpoint) throws IOException, InterruptedException {
+        final HttpResponse<String> response = getHttpResponse(endpoint, -1L);
+
+        // Deserialize String into the specific type T
+        final TypeReference<LemonSqueezyResponse<T>> typeRef = new TypeReference<>() {};
+        return objectMapper.readValue(response.body(), typeRef);
+    }
+
+    private HttpResponse<String> getHttpResponse(final ApiEndpoint endpoint, final Long id) throws IOException, InterruptedException {
         final HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(endpoint.getApiEndpoint()))
+                .uri(URI.create(endpoint.getApiEndpoint() + (id > 0 ? "/" + id: "")))
                 .header("Accept", "application/vnd.api+json")
                 .header("Content-Type", "application/vnd.api+json")
                 .header("Authorization", "Bearer " + apiKey)
                 .build();
 
         // Get response as String
-        final HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
-        // Deserialize String into the specific type T
-        return objectMapper.readValue(response.body(), responseType);
+        return client.send(request, HttpResponse.BodyHandlers.ofString());
     }
 }
