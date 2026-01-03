@@ -12,7 +12,7 @@ public class LemonSqueezyAutoConfigurer {
     @Bean
     @ConditionalOnMissingBean
     public LemonSqueezyClient lemonSqueezyClient(final LemonSqueezyProperties properties) {
-        // This is where you pass the API key from properties to your client
+        // Use the API key from properties to your client
         return new LemonSqueezyClient(properties.getApiKey());
     }
 }
