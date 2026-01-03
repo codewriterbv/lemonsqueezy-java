@@ -6,10 +6,10 @@ import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -24,8 +24,13 @@ public class BaseTest {
         objectMapper.registerModule(javaTimeModule);
     }
 
-    protected String loadJson(String file) throws IOException {
-        return new String(Files.readAllBytes(Paths.get(getClass().getResource(file).getPath())), StandardCharsets.UTF_8);
+    protected String loadJson(String fileName) throws IOException {
+        try (InputStream is = getClass().getClassLoader().getResourceAsStream(fileName)) {
+            if (is == null) {
+                throw new FileNotFoundException("Resource not found: " + fileName);
+            }
+            return new String(is.readAllBytes(), StandardCharsets.UTF_8);
+        }
     }
 
     protected String makePrettyJson(Object o) throws JsonProcessingException {
