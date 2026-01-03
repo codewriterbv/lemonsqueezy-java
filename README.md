@@ -57,7 +57,7 @@ import be.codewriter.lemonsqueezy.configuration.LemonSqueezyClient;
 import be.codewriter.lemonsqueezy.generic.ApiEndpoint;
 import be.codewriter.lemonsqueezy.response.LemonSqueezyResponse;
 import be.codewriter.lemonsqueezy.variant.Variant;
-import be.codewriter.lemonsqueezy.variant.VariantItem;
+import be.codewriter.lemonsqueezy.variant.VariantResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -83,9 +83,9 @@ public class LemonSqueezyController {
      * Fetch specific details for a single variant by ID
      */
     @GetMapping("/item/{id}")
-    public VariantItem getItem(@PathVariable Long id) throws IOException, InterruptedException {
+    public VariantResponse getItem(@PathVariable Long id) throws IOException, InterruptedException {
         // Maps the specific resource data to the VariantItem DTO
-        return client.getItem(ApiEndpoint.VARIANTS, id, VariantItem.class);
+        return client.getItem(ApiEndpoint.VARIANTS, id, VariantResponse.class);
     }
 }
 ```

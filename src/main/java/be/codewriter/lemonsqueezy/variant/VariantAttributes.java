@@ -1,13 +1,11 @@
 package be.codewriter.lemonsqueezy.variant;
 
 import be.codewriter.lemonsqueezy.BaseAttributes;
-import be.codewriter.lemonsqueezy.generic.Urls;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 /**
  *https://docs.lemonsqueezy.com/api/variants/the-variant-object
@@ -15,230 +13,218 @@ import java.util.UUID;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VariantAttributes extends BaseAttributes {
-
-    @JsonProperty("customer_id")
-    private Long customerId;
-    @JsonProperty("order_number")
-    private Long orderNumber;
-    @JsonProperty("identifier")
-    private UUID identifier;
-    @JsonProperty("user_name")
-    private String userName;
-    @JsonProperty("user_email")
-    private String userEmail;
-    @JsonProperty("currency")
-    private String currency;
-    @JsonProperty("currency_rate")
-    private String currencyRate;
-    @JsonProperty("subtotal")
-    private Double subTotal;
-    @JsonProperty("subtotal_usd")
-    private Double subTotalUsd;
-    @JsonProperty("subtotal_formatted")
-    private String subTotalFormatted;
-    @JsonProperty("discount_total")
-    private Double discountTotal;
-    @JsonProperty("discount_total_usd")
-    private Double discountTotalUsd;
-    @JsonProperty("discount_total_formatted")
-    private String discountTotalFormatted;
-    private Double total;
-    @JsonProperty("total_usd")
-    private Double totalUsd;
-    @JsonProperty("total_formatted")
-    private String totalFormatted;
-    private Double tax;
-    @JsonProperty("tax_usd")
-    private Double taxUsd;
-    @JsonProperty("tax_rate")
-    private Double taxRate;
-    @JsonProperty("tax_formatted")
-    private String taxFormatted;
-    @JsonProperty("tax_name")
-    private String taxName;
-    @JsonProperty("status")
+    private int price;
+    @JsonProperty("is_subscription")
+    private boolean isSubscription;
+    private String interval;
+    @JsonProperty("interval_count")
+    private Integer intervalCount;
+    @JsonProperty("has_free_trial")
+    private boolean hasFreeTrial;
+    @JsonProperty("trial_interval")
+    private String trialInterval;
+    @JsonProperty("trial_interval_count")
+    private int trialIntervalCount;
+    @JsonProperty("pay_what_you_want")
+    private boolean payWhatYouWant;
+    @JsonProperty("min_price")
+    private int minPrice;
+    @JsonProperty("suggested_price")
+    private int suggestedPrice;
+    @JsonProperty("product_id")
+    private int productId;
+    private String name;
+    private String slug;
+    private String description;
+    @JsonProperty("has_license_keys")
+    private boolean hasLicenseKeys;
+    @JsonProperty("license_activation_limit")
+    private int licenseActivationLimit;
+    @JsonProperty("is_license_limit_unlimited")
+    private boolean isLicenseLimitUnlimited;
+    @JsonProperty("license_length_value")
+    private int licenseLengthValue;
+    @JsonProperty("license_length_unit")
+    private String licenseLengthUnit;
+    @JsonProperty("is_license_length_unlimited")
+    private boolean isLicenseLengthUnlimited;
+    private int sort;
     private String status;
     @JsonProperty("status_formatted")
     private String statusFormatted;
-    @JsonProperty("refunded")
-    private Boolean refunded;
-    @JsonProperty("first_order_item")
-    private VariantItem firstOrderItem;
-    @JsonProperty("urls")
-    private Urls urls;
-    @JsonProperty("deleted_at")
-    private LocalDateTime deletedAt;
+    @JsonProperty("test_mode")
+    private boolean testMode;
+    @JsonProperty("created_at")
+    private LocalDateTime createdAt;
+    @JsonProperty("updated_at")
+    private LocalDateTime updatedAt;
 
-    public VariantAttributes() {
-        // For JSON parsing
+    public int getPrice() { 
+        return price;
     }
 
-    public Long getCustomerId() {
-        return customerId;
+    public void setPrice(int price) {
+        this.price = price;
     }
 
-    public void setCustomerId(Long customerId) {
-        this.customerId = customerId;
+    public boolean isSubscription() {
+        return isSubscription;
     }
 
-    public Long getOrderNumber() {
-        return orderNumber;
+    public void setSubscription(boolean subscription) {
+        isSubscription = subscription;
     }
 
-    public void setOrderNumber(Long orderNumber) {
-        this.orderNumber = orderNumber;
+    public String getInterval() {
+        return interval;
     }
 
-    public UUID getIdentifier() {
-        return identifier;
+    public void setInterval(String interval) {
+        this.interval = interval;
     }
 
-    public void setIdentifier(UUID identifier) {
-        this.identifier = identifier;
+    public Integer getIntervalCount() {
+        return intervalCount;
     }
 
-    public String getUserName() {
-        return userName;
+    public void setIntervalCount(Integer intervalCount) {
+        this.intervalCount = intervalCount;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public boolean isHasFreeTrial() {
+        return hasFreeTrial;
     }
 
-    public String getUserEmail() {
-        return userEmail;
+    public void setHasFreeTrial(boolean hasFreeTrial) {
+        this.hasFreeTrial = hasFreeTrial;
     }
 
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
+    public String getTrialInterval() {
+        return trialInterval;
     }
 
-    public String getCurrency() {
-        return currency;
+    public void setTrialInterval(String trialInterval) {
+        this.trialInterval = trialInterval;
     }
 
-    public void setCurrency(String currency) {
-        this.currency = currency;
+    public int getTrialIntervalCount() {
+        return trialIntervalCount;
     }
 
-    public String getCurrencyRate() {
-        return currencyRate;
+    public void setTrialIntervalCount(int trialIntervalCount) {
+        this.trialIntervalCount = trialIntervalCount;
     }
 
-    public void setCurrencyRate(String currencyRate) {
-        this.currencyRate = currencyRate;
+    public boolean isPayWhatYouWant() {
+        return payWhatYouWant;
     }
 
-    public Double getSubTotal() {
-        return subTotal;
+    public void setPayWhatYouWant(boolean payWhatYouWant) {
+        this.payWhatYouWant = payWhatYouWant;
     }
 
-    public void setSubTotal(Double subTotal) {
-        this.subTotal = subTotal;
+    public int getMinPrice() {
+        return minPrice;
     }
 
-    public Double getSubTotalUsd() {
-        return subTotalUsd;
+    public void setMinPrice(int minPrice) {
+        this.minPrice = minPrice;
     }
 
-    public void setSubTotalUsd(Double subTotalUsd) {
-        this.subTotalUsd = subTotalUsd;
+    public int getSuggestedPrice() {
+        return suggestedPrice;
     }
 
-    public String getSubTotalFormatted() {
-        return subTotalFormatted;
+    public void setSuggestedPrice(int suggestedPrice) {
+        this.suggestedPrice = suggestedPrice;
     }
 
-    public void setSubTotalFormatted(String subTotalFormatted) {
-        this.subTotalFormatted = subTotalFormatted;
+    public int getProductId() {
+        return productId;
     }
 
-    public Double getDiscountTotal() {
-        return discountTotal;
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
-    public void setDiscountTotal(Double discountTotal) {
-        this.discountTotal = discountTotal;
+    public String getName() {
+        return name;
     }
 
-    public Double getDiscountTotalUsd() {
-        return discountTotalUsd;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setDiscountTotalUsd(Double discountTotalUsd) {
-        this.discountTotalUsd = discountTotalUsd;
+    public String getSlug() {
+        return slug;
     }
 
-    public String getDiscountTotalFormatted() {
-        return discountTotalFormatted;
+    public void setSlug(String slug) {
+        this.slug = slug;
     }
 
-    public void setDiscountTotalFormatted(String discountTotalFormatted) {
-        this.discountTotalFormatted = discountTotalFormatted;
+    public String getDescription() {
+        return description;
     }
 
-    public Double getTotal() {
-        return total;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public void setTotal(Double total) {
-        this.total = total;
+    public boolean isHasLicenseKeys() {
+        return hasLicenseKeys;
     }
 
-    public Double getTotalUsd() {
-        return totalUsd;
+    public void setHasLicenseKeys(boolean hasLicenseKeys) {
+        this.hasLicenseKeys = hasLicenseKeys;
     }
 
-    public void setTotalUsd(Double totalUsd) {
-        this.totalUsd = totalUsd;
+    public int getLicenseActivationLimit() {
+        return licenseActivationLimit;
     }
 
-    public String getTotalFormatted() {
-        return totalFormatted;
+    public void setLicenseActivationLimit(int licenseActivationLimit) {
+        this.licenseActivationLimit = licenseActivationLimit;
     }
 
-    public void setTotalFormatted(String totalFormatted) {
-        this.totalFormatted = totalFormatted;
+    public boolean isLicenseLimitUnlimited() {
+        return isLicenseLimitUnlimited;
     }
 
-    public Double getTax() {
-        return tax;
+    public void setLicenseLimitUnlimited(boolean licenseLimitUnlimited) {
+        isLicenseLimitUnlimited = licenseLimitUnlimited;
     }
 
-    public void setTax(Double tax) {
-        this.tax = tax;
+    public int getLicenseLengthValue() {
+        return licenseLengthValue;
     }
 
-    public Double getTaxUsd() {
-        return taxUsd;
+    public void setLicenseLengthValue(int licenseLengthValue) {
+        this.licenseLengthValue = licenseLengthValue;
     }
 
-    public void setTaxUsd(Double taxUsd) {
-        this.taxUsd = taxUsd;
+    public String getLicenseLengthUnit() {
+        return licenseLengthUnit;
     }
 
-    public Double getTaxRate() {
-        return taxRate;
+    public void setLicenseLengthUnit(String licenseLengthUnit) {
+        this.licenseLengthUnit = licenseLengthUnit;
     }
 
-    public void setTaxRate(Double taxRate) {
-        this.taxRate = taxRate;
+    public boolean isLicenseLengthUnlimited() {
+        return isLicenseLengthUnlimited;
     }
 
-    public String getTaxFormatted() {
-        return taxFormatted;
+    public void setLicenseLengthUnlimited(boolean licenseLengthUnlimited) {
+        isLicenseLengthUnlimited = licenseLengthUnlimited;
     }
 
-    public void setTaxFormatted(String taxFormatted) {
-        this.taxFormatted = taxFormatted;
+    public int getSort() {
+        return sort;
     }
 
-    public String getTaxName() {
-        return taxName;
-    }
-
-    public void setTaxName(String taxName) {
-        this.taxName = taxName;
+    public void setSort(int sort) {
+        this.sort = sort;
     }
 
     public String getStatus() {
@@ -257,27 +243,11 @@ public class VariantAttributes extends BaseAttributes {
         this.statusFormatted = statusFormatted;
     }
 
-    public Boolean getRefunded() {
-        return refunded;
+    public boolean isTestMode() {
+        return testMode;
     }
 
-    public void setRefunded(Boolean refunded) {
-        this.refunded = refunded;
-    }
-
-    public VariantItem getFirstOrderItem() {
-        return firstOrderItem;
-    }
-
-    public void setFirstOrderItem(VariantItem firstOrderItem) {
-        this.firstOrderItem = firstOrderItem;
-    }
-
-    public Urls getUrls() {
-        return urls;
-    }
-
-    public void setUrls(Urls urls) {
-        this.urls = urls;
+    public void setTestMode(boolean testMode) {
+        this.testMode = testMode;
     }
 }

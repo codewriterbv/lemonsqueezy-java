@@ -1,0 +1,582 @@
+{
+  "meta": {
+    "page": {
+      "currentPage": 1,
+      "from": 1,
+      "lastPage": 2,
+      "perPage": 10,
+      "to": 10,
+      "total": 11
+    }
+  },
+  "jsonapi": {
+    "version": "1.0"
+  },
+  "links": {
+    "first": "https://api.lemonsqueezy.com/v1/variants?page%5Bnumber%5D=1&page%5Bsize%5D=10&sort=sort",
+    "last": "https://api.lemonsqueezy.com/v1/variants?page%5Bnumber%5D=2&page%5Bsize%5D=10&sort=sort",
+    "next": "https://api.lemonsqueezy.com/v1/variants?page%5Bnumber%5D=2&page%5Bsize%5D=10&sort=sort"
+  },
+  "data": [
+    {
+      "type": "variants",
+      "id": "1187357",
+      "attributes": {
+        "price": 49900,
+        "is_subscription": true,
+        "interval": "year",
+        "interval_count": 1,
+        "has_free_trial": false,
+        "trial_interval": "day",
+        "trial_interval_count": 30,
+        "pay_what_you_want": false,
+        "min_price": 0,
+        "suggested_price": 0,
+        "product_id": 750022,
+        "name": "Default",
+        "slug": "fcfce61f-f47e-428a-8c02-29d4a55df86b",
+        "description": "",
+        "links": [],
+        "has_license_keys": false,
+        "license_activation_limit": 5,
+        "is_license_limit_unlimited": false,
+        "license_length_value": 1,
+        "license_length_unit": "years",
+        "is_license_length_unlimited": false,
+        "sort": 1,
+        "status": "pending",
+        "status_formatted": "Pending",
+        "created_at": "2026-01-02T13:33:35.000000Z",
+        "updated_at": "2026-01-02T13:45:28.000000Z",
+        "test_mode": true
+      },
+      "relationships": {
+        "product": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1187357/product",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1187357/relationships/product"
+          }
+        },
+        "files": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1187357/files",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1187357/relationships/files"
+          }
+        },
+        "price-model": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1187357/price-model",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1187357/relationships/price-model"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.lemonsqueezy.com/v1/variants/1187357"
+      }
+    },
+    {
+      "type": "variants",
+      "id": "1187363",
+      "attributes": {
+        "price": 999,
+        "is_subscription": false,
+        "interval": null,
+        "interval_count": null,
+        "has_free_trial": false,
+        "trial_interval": "day",
+        "trial_interval_count": 30,
+        "pay_what_you_want": false,
+        "min_price": 0,
+        "suggested_price": 0,
+        "product_id": 750021,
+        "name": "",
+        "slug": "fe1b5bab-8fd2-4092-90c2-22bb1abaf881",
+        "description": "",
+        "links": [],
+        "has_license_keys": false,
+        "license_activation_limit": 5,
+        "is_license_limit_unlimited": false,
+        "license_length_value": 1,
+        "license_length_unit": "years",
+        "is_license_length_unlimited": false,
+        "sort": 1,
+        "status": "pending",
+        "status_formatted": "Pending",
+        "created_at": "2026-01-02T13:35:10.000000Z",
+        "updated_at": "2026-01-02T13:35:10.000000Z",
+        "test_mode": true
+      },
+      "relationships": {
+        "product": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1187363/product",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1187363/relationships/product"
+          }
+        },
+        "files": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1187363/files",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1187363/relationships/files"
+          }
+        },
+        "price-model": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1187363/price-model",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1187363/relationships/price-model"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.lemonsqueezy.com/v1/variants/1187363"
+      }
+    },
+    {
+      "type": "variants",
+      "id": "1187364",
+      "attributes": {
+        "price": 999,
+        "is_subscription": false,
+        "interval": "year",
+        "interval_count": 1,
+        "has_free_trial": false,
+        "trial_interval": "day",
+        "trial_interval_count": 30,
+        "pay_what_you_want": false,
+        "min_price": 0,
+        "suggested_price": 0,
+        "product_id": 750021,
+        "name": "Default",
+        "slug": "39caae82-afe4-48bf-9712-cafda6aaa416",
+        "description": "",
+        "links": [],
+        "has_license_keys": false,
+        "license_activation_limit": 5,
+        "is_license_limit_unlimited": false,
+        "license_length_value": 1,
+        "license_length_unit": "years",
+        "is_license_length_unlimited": false,
+        "sort": 1,
+        "status": "pending",
+        "status_formatted": "Pending",
+        "created_at": "2026-01-02T13:35:18.000000Z",
+        "updated_at": "2026-01-03T13:17:24.000000Z",
+        "test_mode": true
+      },
+      "relationships": {
+        "product": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1187364/product",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1187364/relationships/product"
+          }
+        },
+        "files": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1187364/files",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1187364/relationships/files"
+          }
+        },
+        "price-model": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1187364/price-model",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1187364/relationships/price-model"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.lemonsqueezy.com/v1/variants/1187364"
+      }
+    },
+    {
+      "type": "variants",
+      "id": "1187369",
+      "attributes": {
+        "price": 999,
+        "is_subscription": false,
+        "interval": null,
+        "interval_count": null,
+        "has_free_trial": false,
+        "trial_interval": "day",
+        "trial_interval_count": 30,
+        "pay_what_you_want": false,
+        "min_price": 0,
+        "suggested_price": 0,
+        "product_id": 750019,
+        "name": "",
+        "slug": "02a7590e-20ba-47e6-9a39-9ef90f28f095",
+        "description": "",
+        "links": [],
+        "has_license_keys": false,
+        "license_activation_limit": 5,
+        "is_license_limit_unlimited": false,
+        "license_length_value": 1,
+        "license_length_unit": "years",
+        "is_license_length_unlimited": false,
+        "sort": 1,
+        "status": "pending",
+        "status_formatted": "Pending",
+        "created_at": "2026-01-02T13:36:57.000000Z",
+        "updated_at": "2026-01-02T13:36:57.000000Z",
+        "test_mode": true
+      },
+      "relationships": {
+        "product": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1187369/product",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1187369/relationships/product"
+          }
+        },
+        "files": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1187369/files",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1187369/relationships/files"
+          }
+        },
+        "price-model": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1187369/price-model",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1187369/relationships/price-model"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.lemonsqueezy.com/v1/variants/1187369"
+      }
+    },
+    {
+      "type": "variants",
+      "id": "1187370",
+      "attributes": {
+        "price": 999,
+        "is_subscription": false,
+        "interval": "year",
+        "interval_count": 1,
+        "has_free_trial": false,
+        "trial_interval": "day",
+        "trial_interval_count": 30,
+        "pay_what_you_want": false,
+        "min_price": 0,
+        "suggested_price": 0,
+        "product_id": 750019,
+        "name": "Default",
+        "slug": "227e7afb-0a2e-4866-8482-9506a8007c7b",
+        "description": "",
+        "links": [],
+        "has_license_keys": false,
+        "license_activation_limit": 5,
+        "is_license_limit_unlimited": false,
+        "license_length_value": 1,
+        "license_length_unit": "years",
+        "is_license_length_unlimited": false,
+        "sort": 1,
+        "status": "pending",
+        "status_formatted": "Pending",
+        "created_at": "2026-01-02T13:37:00.000000Z",
+        "updated_at": "2026-01-02T13:37:35.000000Z",
+        "test_mode": true
+      },
+      "relationships": {
+        "product": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1187370/product",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1187370/relationships/product"
+          }
+        },
+        "files": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1187370/files",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1187370/relationships/files"
+          }
+        },
+        "price-model": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1187370/price-model",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1187370/relationships/price-model"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.lemonsqueezy.com/v1/variants/1187370"
+      }
+    },
+    {
+      "type": "variants",
+      "id": "1180366",
+      "attributes": {
+        "price": 4900,
+        "is_subscription": true,
+        "interval": "year",
+        "interval_count": 1,
+        "has_free_trial": false,
+        "trial_interval": "day",
+        "trial_interval_count": 30,
+        "pay_what_you_want": false,
+        "min_price": 0,
+        "suggested_price": 0,
+        "product_id": 750019,
+        "name": "Yearly",
+        "slug": "31623baa-8cee-4b01-aee9-a1612f91258f",
+        "description": "",
+        "links": [],
+        "has_license_keys": false,
+        "license_activation_limit": 5,
+        "is_license_limit_unlimited": false,
+        "license_length_value": 1,
+        "license_length_unit": "years",
+        "is_license_length_unlimited": false,
+        "sort": 2,
+        "status": "published",
+        "status_formatted": "Published",
+        "created_at": "2025-12-30T04:36:31.000000Z",
+        "updated_at": "2026-01-02T13:36:14.000000Z",
+        "test_mode": true
+      },
+      "relationships": {
+        "product": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1180366/product",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1180366/relationships/product"
+          }
+        },
+        "files": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1180366/files",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1180366/relationships/files"
+          }
+        },
+        "price-model": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1180366/price-model",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1180366/relationships/price-model"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.lemonsqueezy.com/v1/variants/1180366"
+      }
+    },
+    {
+      "type": "variants",
+      "id": "1180368",
+      "attributes": {
+        "price": 19900,
+        "is_subscription": true,
+        "interval": "year",
+        "interval_count": 1,
+        "has_free_trial": false,
+        "trial_interval": "day",
+        "trial_interval_count": 30,
+        "pay_what_you_want": false,
+        "min_price": 0,
+        "suggested_price": 0,
+        "product_id": 750021,
+        "name": "Yearly",
+        "slug": "f455408c-a203-4d2f-ab4d-e8995de96189",
+        "description": "",
+        "links": [],
+        "has_license_keys": false,
+        "license_activation_limit": 5,
+        "is_license_limit_unlimited": false,
+        "license_length_value": 1,
+        "license_length_unit": "years",
+        "is_license_length_unlimited": false,
+        "sort": 2,
+        "status": "published",
+        "status_formatted": "Published",
+        "created_at": "2025-12-30T04:39:32.000000Z",
+        "updated_at": "2026-01-02T13:34:39.000000Z",
+        "test_mode": true
+      },
+      "relationships": {
+        "product": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1180368/product",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1180368/relationships/product"
+          }
+        },
+        "files": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1180368/files",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1180368/relationships/files"
+          }
+        },
+        "price-model": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1180368/price-model",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1180368/relationships/price-model"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.lemonsqueezy.com/v1/variants/1180368"
+      }
+    },
+    {
+      "type": "variants",
+      "id": "1180369",
+      "attributes": {
+        "price": 49900,
+        "is_subscription": true,
+        "interval": "year",
+        "interval_count": 1,
+        "has_free_trial": false,
+        "trial_interval": "day",
+        "trial_interval_count": 30,
+        "pay_what_you_want": false,
+        "min_price": 0,
+        "suggested_price": 0,
+        "product_id": 750022,
+        "name": "Enterprise - Annual",
+        "slug": "7c34a85d-b14d-4cb0-a148-c3761ec192fa",
+        "description": "",
+        "links": [],
+        "has_license_keys": false,
+        "license_activation_limit": 5,
+        "is_license_limit_unlimited": false,
+        "license_length_value": 1,
+        "license_length_unit": "years",
+        "is_license_length_unlimited": false,
+        "sort": 2,
+        "status": "published",
+        "status_formatted": "Published",
+        "created_at": "2025-12-30T04:41:14.000000Z",
+        "updated_at": "2026-01-02T13:45:11.000000Z",
+        "test_mode": true
+      },
+      "relationships": {
+        "product": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1180369/product",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1180369/relationships/product"
+          }
+        },
+        "files": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1180369/files",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1180369/relationships/files"
+          }
+        },
+        "price-model": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1180369/price-model",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1180369/relationships/price-model"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.lemonsqueezy.com/v1/variants/1180369"
+      }
+    },
+    {
+      "type": "variants",
+      "id": "1187338",
+      "attributes": {
+        "price": 4199,
+        "is_subscription": true,
+        "interval": "month",
+        "interval_count": 1,
+        "has_free_trial": false,
+        "trial_interval": "day",
+        "trial_interval_count": 30,
+        "pay_what_you_want": false,
+        "min_price": 0,
+        "suggested_price": 0,
+        "product_id": 750022,
+        "name": "Enterprise - Monthly",
+        "slug": "51ec2058-4f0a-4a10-a182-e0a8812d7b3d",
+        "description": "",
+        "links": [],
+        "has_license_keys": false,
+        "license_activation_limit": 5,
+        "is_license_limit_unlimited": false,
+        "license_length_value": 1,
+        "license_length_unit": "years",
+        "is_license_length_unlimited": false,
+        "sort": 3,
+        "status": "published",
+        "status_formatted": "Published",
+        "created_at": "2026-01-02T13:29:32.000000Z",
+        "updated_at": "2026-01-02T13:45:22.000000Z",
+        "test_mode": true
+      },
+      "relationships": {
+        "product": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1187338/product",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1187338/relationships/product"
+          }
+        },
+        "files": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1187338/files",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1187338/relationships/files"
+          }
+        },
+        "price-model": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1187338/price-model",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1187338/relationships/price-model"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.lemonsqueezy.com/v1/variants/1187338"
+      }
+    },
+    {
+      "type": "variants",
+      "id": "1187361",
+      "attributes": {
+        "price": 1699,
+        "is_subscription": true,
+        "interval": "month",
+        "interval_count": 1,
+        "has_free_trial": false,
+        "trial_interval": "day",
+        "trial_interval_count": 30,
+        "pay_what_you_want": false,
+        "min_price": 0,
+        "suggested_price": 0,
+        "product_id": 750021,
+        "name": "Monthly",
+        "slug": "f8927207-8cde-45c5-a9bf-2727eb31375a",
+        "description": "",
+        "links": [],
+        "has_license_keys": false,
+        "license_activation_limit": 5,
+        "is_license_limit_unlimited": false,
+        "license_length_value": 1,
+        "license_length_unit": "years",
+        "is_license_length_unlimited": false,
+        "sort": 3,
+        "status": "published",
+        "status_formatted": "Published",
+        "created_at": "2026-01-02T13:34:39.000000Z",
+        "updated_at": "2026-01-03T13:17:12.000000Z",
+        "test_mode": true
+      },
+      "relationships": {
+        "product": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1187361/product",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1187361/relationships/product"
+          }
+        },
+        "files": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1187361/files",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1187361/relationships/files"
+          }
+        },
+        "price-model": {
+          "links": {
+            "related": "https://api.lemonsqueezy.com/v1/variants/1187361/price-model",
+            "self": "https://api.lemonsqueezy.com/v1/variants/1187361/relationships/price-model"
+          }
+        }
+      },
+      "links": {
+        "self": "https://api.lemonsqueezy.com/v1/variants/1187361"
+      }
+    }
+  ]
+}
