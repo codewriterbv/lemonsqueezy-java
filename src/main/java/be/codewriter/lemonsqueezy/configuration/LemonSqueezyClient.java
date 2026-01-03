@@ -23,7 +23,7 @@ public class LemonSqueezyClient {
         return apiKey;
     }
 
-    public <T> T get(final ApiEndpoint endpoint, Class<T> responseType) throws IOException, InterruptedException {
+    public <T> T get(final ApiEndpoint endpoint, final Class<T> responseType) throws IOException, InterruptedException {
         HttpResponse<String> response;
         try (HttpClient client = HttpClient.newHttpClient()) {
             HttpRequest request = HttpRequest.newBuilder()
