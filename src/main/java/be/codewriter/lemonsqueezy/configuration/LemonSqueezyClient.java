@@ -33,10 +33,10 @@ public class LemonSqueezyClient {
                 .header("Authorization", "Bearer " + apiKey)
                 .build();
 
-        // 1. Get response as String
-        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        // Get response as String
+        final HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
-        // 2. Deserialize String into the specific type T
+        // Deserialize String into the specific type T
         return objectMapper.readValue(response.body(), responseType);
     }
 }
