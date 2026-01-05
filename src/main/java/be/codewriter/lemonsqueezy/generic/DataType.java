@@ -14,7 +14,8 @@ public enum DataType {
     STORES("stores"),
     SUBSCRIPTIONS("subscriptions"),
     SUBSCRIPTION_INVOICES("subscription-invoices"),
-    USERS("users");
+    USERS("users"),
+    VARIANTS("variants");
 
     private final String value;
 

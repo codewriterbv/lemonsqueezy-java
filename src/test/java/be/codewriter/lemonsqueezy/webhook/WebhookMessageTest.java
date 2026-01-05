@@ -22,7 +22,7 @@ class WebhookMessageTest extends BaseTest {
 
     @Test
     void shouldParseMinimal() throws IOException {
-        WebhookMessage message = objectMapper.readValue(loadJson("/lemonsqueezy/webhook/minimal.json"), WebhookMessage.class);
+        WebhookMessage message = objectMapper.readValue(loadJson("lemonsqueezy/webhook/minimal.json"), WebhookMessage.class);
         assertAll(
                 // Meta
                 () -> assertNotNull(message.getMeta(), "Meta should not be null"),
@@ -37,7 +37,7 @@ class WebhookMessageTest extends BaseTest {
 
     @Test
     void shouldParseLicenseKeyCreated() throws IOException {
-        WebhookMessage message = objectMapper.readValue(loadJson("/lemonsqueezy/webhook/license_key_created.json"), WebhookMessage.class);
+        WebhookMessage message = objectMapper.readValue(loadJson("lemonsqueezy/webhook/license_key_created.json"), WebhookMessage.class);
         LicenseKeyAttributes attr = ((LicenseKey) message.getData()).getAttributes();
         assertAll(
                 // Meta
@@ -71,7 +71,7 @@ class WebhookMessageTest extends BaseTest {
 
     @Test
     void shouldParseOrderCreated() throws IOException {
-        WebhookMessage message = objectMapper.readValue(loadJson("/lemonsqueezy/webhook/order_created.json"), WebhookMessage.class);
+        WebhookMessage message = objectMapper.readValue(loadJson("lemonsqueezy/webhook/order_created.json"), WebhookMessage.class);
         OrderAttributes attr = ((Order) message.getData()).getAttributes();
         assertAll(
                 // Meta
@@ -100,7 +100,7 @@ class WebhookMessageTest extends BaseTest {
 
     @Test
     void shouldParseSubscriptionCreated() throws IOException {
-        WebhookMessage message = objectMapper.readValue(loadJson("/lemonsqueezy/webhook/subscription_created.json"), WebhookMessage.class);
+        WebhookMessage message = objectMapper.readValue(loadJson("lemonsqueezy/webhook/subscription_created.json"), WebhookMessage.class);
         SubscriptionAttributes attr = ((Subscription) message.getData()).getAttributes();
         assertAll(
                 // Meta
@@ -170,7 +170,7 @@ class WebhookMessageTest extends BaseTest {
 
     @Test
     void shouldParseSubscriptionUpdated() throws IOException {
-        WebhookMessage message = objectMapper.readValue(loadJson("/lemonsqueezy/webhook/subscription_updated.json"), WebhookMessage.class);
+        WebhookMessage message = objectMapper.readValue(loadJson("lemonsqueezy/webhook/subscription_updated.json"), WebhookMessage.class);
         SubscriptionAttributes attr = ((Subscription) message.getData()).getAttributes();
         assertAll(
                 // Meta
@@ -210,7 +210,7 @@ class WebhookMessageTest extends BaseTest {
 
     @Test
     void shouldParseSubscriptionPaymentSuccess() throws IOException {
-        WebhookMessage message = objectMapper.readValue(loadJson("/lemonsqueezy/webhook/subscription_payment_success.json"), WebhookMessage.class);
+        WebhookMessage message = objectMapper.readValue(loadJson("lemonsqueezy/webhook/subscription_payment_success.json"), WebhookMessage.class);
         SubscriptionInvoiceAttributes attr = ((SubscriptionInvoice) message.getData()).getAttributes();
         assertAll(
                 // Meta

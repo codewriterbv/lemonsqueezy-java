@@ -14,7 +14,7 @@ class StoreTest extends BaseTest {
 
     @Test
     void shouldParseStore() throws IOException {
-        Store store = objectMapper.readValue(loadJson("/lemonsqueezy/store/store.json"), Store.class);
+        Store store = objectMapper.readValue(loadJson("lemonsqueezy/store/store.json"), Store.class);
         StoreAttributes attr = store.getAttributes();
         assertAll(
                 () -> assertEquals(DataType.STORES, store.getType(), "Store type should be equal"),
@@ -41,7 +41,7 @@ class StoreTest extends BaseTest {
 
     @Test
     void shouldParseStoreResponse() throws IOException {
-        StoreResponse response = objectMapper.readValue(loadJson("/lemonsqueezy/store/store_response.json"), StoreResponse.class);
+        StoreResponse response = objectMapper.readValue(loadJson("lemonsqueezy/store/store_response.json"), StoreResponse.class);
         Store store = response.getStore();
         StoreAttributes attr = store.getAttributes();
         assertAll(
@@ -87,7 +87,7 @@ class StoreTest extends BaseTest {
 
     @Test
     void shouldParseAllStoresResponse() throws IOException {
-        StoreListResponse response = objectMapper.readValue(loadJson("/lemonsqueezy/store/all_stores_response.json"), StoreListResponse.class);
+        StoreListResponse response = objectMapper.readValue(loadJson("lemonsqueezy/store/all_stores_response.json"), StoreListResponse.class);
         List<Store> stores = response.getStores();
         StoreAttributes attr = stores.get(0).getAttributes();
         assertAll(

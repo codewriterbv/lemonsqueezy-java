@@ -15,7 +15,7 @@ class CustomerTest extends BaseTest {
 
     @Test
     void shouldParseCustomer() throws IOException {
-        Customer user = objectMapper.readValue(loadJson("/lemonsqueezy/customer/customer.json"), Customer.class);
+        Customer user = objectMapper.readValue(loadJson("lemonsqueezy/customer/customer.json"), Customer.class);
         CustomerAttributes attr = user.getAttributes();
         assertAll(
                 () -> assertEquals(DataType.CUSTOMERS, user.getType(), "Customer type should be equal"),
@@ -44,7 +44,7 @@ class CustomerTest extends BaseTest {
 
     @Test
     void shouldParseCustomerResponse() throws IOException {
-        CustomerResponse response = objectMapper.readValue(loadJson("/lemonsqueezy/customer/customer_response.json"), CustomerResponse.class);
+        CustomerResponse response = objectMapper.readValue(loadJson("lemonsqueezy/customer/customer_response.json"), CustomerResponse.class);
         Customer customer = response.getCustomer();
         CustomerAttributes attr = customer.getAttributes();
         assertAll(
@@ -88,7 +88,7 @@ class CustomerTest extends BaseTest {
 
     @Test
     void shouldParseAllCustomersResponse() throws IOException {
-        CustomerListResponse response = objectMapper.readValue(loadJson("/lemonsqueezy/customer/all_customers_response.json"), CustomerListResponse.class);
+        CustomerListResponse response = objectMapper.readValue(loadJson("lemonsqueezy/customer/all_customers_response.json"), CustomerListResponse.class);
         List<Customer> customers = response.getCustomers();
         CustomerAttributes attr1 = customers.get(0).getAttributes();
         CustomerAttributes attr2 = customers.get(1).getAttributes();

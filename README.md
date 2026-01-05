@@ -35,6 +35,61 @@ for (Store store : list.getStores()) {
 }
 ```
 
+#### LemonSqueezyClient
+
+* **1. Configuration (Spring Boot)**
+   Add your Lemon Squeezy API key to your application.properties or application.yml. The SDK will automatically detect this and initialize the LemonSqueezyClient bean for you.
+
+`application.properties`
+
+```properties
+lemonsqueezy.api-key=YOUR_API_KEY
+```
+
+* **2. Implementation Example**
+
+   Once configured, you can inject the LemonSqueezyClient into any Spring-managed component. The example below demonstrates a REST controller handling both paginated lists and single resource lookups.
+
+```java
+package com.yourproject.controller;
+
+import be.codewriter.lemonsqueezy.configuration.LemonSqueezyClient;
+import be.codewriter.lemonsqueezy.generic.ApiEndpoint;
+import be.codewriter.lemonsqueezy.response.LemonSqueezyResponse;
+import be.codewriter.lemonsqueezy.variant.Variant;
+import be.codewriter.lemonsqueezy.variant.VariantResponse;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+
+import java.io.IOException;
+
+@RestController
+@RequestMapping("/api/lemonsqueezy")
+@RequiredArgsConstructor
+public class LemonSqueezyController {
+
+    private final LemonSqueezyClient client;
+
+    /**
+     * Fetch a paginated list of variants (plans)
+     */
+    @GetMapping("/list")
+    public LemonSqueezyResponse<Variant> getList() throws IOException, InterruptedException {
+        // Uses the built-in generic list handler
+        return client.getList(ApiEndpoint.VARIANTS);
+    }
+
+    /**
+     * Fetch specific details for a single variant by ID
+     */
+    @GetMapping("/item/{id}")
+    public VariantResponse getItem(@PathVariable Long id) throws IOException, InterruptedException {
+        // Maps the specific resource data to the VariantItem DTO
+        return client.getItem(ApiEndpoint.VARIANTS, id, VariantResponse.class);
+    }
+}
+```
+
 #### Data Objects
 
 * **Checkout**
@@ -77,6 +132,13 @@ for (Store store : list.getStores()) {
         ...
     );
     ```
+
+* **Variant**
+    ```java
+    Variant variant = objectMapper.readValue(variantJson, Variant.class);
+    VariantAttributes attr = variant.getAttributes();
+    ```
+  
 * **Webhooks**, example implementation with a Spring Boot Restcontroller:
     ```java
     @RestController
