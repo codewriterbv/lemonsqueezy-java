@@ -9,7 +9,7 @@
     <name>lemonsqueezy-java</name>
     <description>Java SDK to interact with the Lemon Squeezy API with Spring Boot support</description>
     <url>https://github.com/codewriterbv/lemonsqueezy-java</url>
-    <version>0.0.2-beta-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <properties>
