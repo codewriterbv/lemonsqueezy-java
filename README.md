@@ -5,9 +5,7 @@
 This package provides a Java SDK for the Lemon Squeezy API, as documented
 on [lemonsqueezy.com/api](https://docs.lemonsqueezy.com/api).
 
-## Provided Functionality
-
-### General Guidelines
+## General Guidelines
 
 This library helps you to parse data received from the Lemon Squeezy API. Parsing between JSON and Java objects is done
 with the Jackson library. Because of the datetime format used in the JSONs, you need to use the JavaTimeModule().
@@ -18,11 +16,11 @@ ObjectMapper objectMapper = new ObjectMapper();
 objectMapper.registerModule(new JavaTimeModule());
 ```
 
-### Implemented Objects and Methods
+## Implemented Objects and Methods
 
-**THIS IS WORK-IN-PROGRESS...**
+If you are missing a specific object or method, please open an [issue on GitHub](https://github.com/codewriterbv/lemonsqueezy-java/issues), or fork this project and submit a pull request with the missing functionality.
 
-#### ApiRequest
+### ApiRequest
 
 Uses `java.net.http.HttpClient` to request data from the Lemon Squeezy API.
 
@@ -35,20 +33,19 @@ for (Store store : list.getStores()) {
 }
 ```
 
-#### LemonSqueezyClient
+### LemonSqueezyClient
 
-* **1. Configuration (Spring Boot)**
-   Add your Lemon Squeezy API key to your application.properties or application.yml. The SDK will automatically detect this and initialize the LemonSqueezyClient bean for you.
+#### Spring Boot Configuration
 
-`application.properties`
+Add your Lemon Squeezy API key to your `application.properties` or `application.yml` file. The SDK will automatically detect this and initialize the LemonSqueezyClient bean for you.
 
 ```properties
 lemonsqueezy.api-key=YOUR_API_KEY
 ```
 
-* **2. Implementation Example**
+#### Spring Boot Implementation Example
 
-   Once configured, you can inject the LemonSqueezyClient into any Spring-managed component. The example below demonstrates a REST controller handling both paginated lists and single resource lookups.
+Once configured, you can inject the `LemonSqueezyClient` into any Spring-managed component. The example below demonstrates a REST controller handling both paginated lists and single resource lookups.
 
 ```java
 package com.yourproject.controller;
@@ -90,7 +87,7 @@ public class LemonSqueezyController {
 }
 ```
 
-#### Data Objects
+### Data Objects
 
 * **Checkout**
     ```java
@@ -166,8 +163,6 @@ public class LemonSqueezyController {
 
 ## Using this Library in your Project
 
-### From Maven Repository
-
 Released versions are available via the [Maven repository on central.sonatype.com/artifact/be.codewriter/lemonsqueezy-java](https://central.sonatype.com/artifact/be.codewriter/lemonsqueezy-java):
 
 ```xml
@@ -178,51 +173,7 @@ Released versions are available via the [Maven repository on central.sonatype.co
 </dependency>
 ```
 
-
-### From GitHub Repository
-
-A new artifact is created with GitHub Actions and is available from [GitHub Packages on github.com/codewriterbv/lemonsqueezy-java/packages/2189280](https://github.com/codewriterbv/lemonsqueezy-java/packages/2189280)
-
-1. Add dependency to your `pom.xml`:
-    ```xml
-    <dependency>
-      <groupId>be.codewriter</groupId>
-      <artifactId>lemonsqueezy-java</artifactId>
-      <version>${lemonsqueezy.version}</version>
-    </dependency> 
-    ```
-2. Add repository to your `pom.xml`:
-    ```xml
-    <repositories>
-        <repository>
-            <id>github</id>
-            <name>GitHub Maven Packages</name>
-            <url>https://maven.pkg.github.com/codewriterbv/lemonsqueezy-java</url>
-            <!-- Add the following only if you want to use snapshot versions -->
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-    ```
-3. The GitHub repository requires credentials to get packages
-   as [described here](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-apache-maven-registry#authenticating-to-github-packages).
-   Add a GitHub token to your `settings.xml` in the `.m2` directory:
-    ```xml
-    <settings>
-      ...
-      <servers>
-        ...
-        <server>
-            <id>github</id>
-            <username>YOUR_USER_NAME</username>
-            <password>YOUR_TOKEN</password>
-        </server>
-      </servers>
-    </settings>
-    ```
-
-#### Detailed Info
+### Detailed Info
 
 The library is published on GitHub Repository following these tutorials:
 
