@@ -1,6 +1,7 @@
 package be.codewriter.lemonsqueezy.subscription;
 
 import be.codewriter.lemonsqueezy.BaseAttributes;
+import be.codewriter.lemonsqueezy.generic.Urls;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -56,6 +57,9 @@ public class SubscriptionAttributes extends BaseAttributes {
     private LocalDateTime renewsAt;
     @JsonProperty("ends_at")
     private LocalDateTime endsAt;
+
+    @JsonProperty("urls")
+    private Urls urls;
 
     public SubscriptionAttributes() {
         // For JSON parsing
@@ -219,5 +223,13 @@ public class SubscriptionAttributes extends BaseAttributes {
 
     public void setEndsAt(LocalDateTime endsAt) {
         this.endsAt = endsAt;
+    }
+
+    public Urls getUrls() {
+        return urls;
+    }
+
+    public void setUrls(Urls urls) {
+        this.urls = urls;
     }
 }

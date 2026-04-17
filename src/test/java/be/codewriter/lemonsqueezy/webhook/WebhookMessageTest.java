@@ -146,6 +146,12 @@ class WebhookMessageTest extends BaseTest {
                 () -> assertEquals(LocalDateTime.parse("2024-06-19T14:08:10.000000"), attr.getCreatedAt(), "Data attributes created at should be equal"),
                 () -> assertEquals(LocalDateTime.parse("2024-06-19T14:08:14.000000"), attr.getUpdatedAt(), "Data attributes updated at should be equal"),
 
+                // Data Attributes URLs
+                () -> assertNotNull(attr.getUrls(), "Data attributes urls should not be null"),
+                () -> assertEquals("https://codewriter.lemonsqueezy.com/subscription/421953/payment-details?expires=1718892495&signature=87fe5dcc4dee9f752c6cc99c0dfbc57d4e5a0fdf81205df2d22b073e6ffab626", attr.getUrls().getUpdatePaymentMethod(), "Data attributes urls update payment method should be equal"),
+                () -> assertEquals("https://codewriter.lemonsqueezy.com/billing?expires=1718827695&test_mode=1&user=2476730&signature=a241d94b396f36bd2d194ac40c4f90068ea55b343ff225612e5d2054b9476d83", attr.getUrls().getCustomerPortal(), "Data attributes urls customer portal should be equal"),
+                () -> assertEquals("https://codewriter.lemonsqueezy.com/billing/421953/update?expires=1718892495&user=2476730&signature=5b7ef74ec5b4343d12969d08a415446fff86757ef8430a0fc9fc509d2c624e89", attr.getUrls().getCustomerPortalUpdateSubscription(), "Data attributes urls customer portal update subscription should be equal"),
+
                 // Data Relationships
                 () -> assertEquals("https://api.lemonsqueezy.com/v1/subscriptions/421953/store", message.getData().getRelationships().getStore().getLinks().getRelated(), "Data Relationship should be equal"),
                 () -> assertEquals("https://api.lemonsqueezy.com/v1/subscriptions/421953/relationships/store", message.getData().getRelationships().getStore().getLinks().getSelf(), "Data Relationship should be equal"),
@@ -204,7 +210,13 @@ class WebhookMessageTest extends BaseTest {
                 () -> assertEquals(LocalDateTime.parse("2024-06-19T14:08:13.000000"), attr.getRenewsAt(), "Data attributes renews at at should be equal"),
                 () -> assertNull(attr.getEndsAt(), "Data attributes ends at should be null"),
                 () -> assertEquals(LocalDateTime.parse("2024-06-19T14:08:10.000000"), attr.getCreatedAt(), "Data attributes created at should be equal"),
-                () -> assertEquals(LocalDateTime.parse("2024-06-19T14:08:14.000000"), attr.getUpdatedAt(), "Data attributes updated at should be equal")
+                () -> assertEquals(LocalDateTime.parse("2024-06-19T14:08:14.000000"), attr.getUpdatedAt(), "Data attributes updated at should be equal"),
+
+                // Data Attributes URLs
+                () -> assertNotNull(attr.getUrls(), "Data attributes urls should not be null"),
+                () -> assertEquals("https://codewriter.lemonsqueezy.com/subscription/421953/payment-details?expires=1718892525&signature=e32127630d73cf6e0bb535ee7fe05785c654c5508c4c238f2f2d9a6f4e9ce15c", attr.getUrls().getUpdatePaymentMethod(), "Data attributes urls update payment method should be equal"),
+                () -> assertEquals("https://codewriter.lemonsqueezy.com/billing?expires=1718827725&test_mode=1&user=2476730&signature=9413295faed7ab86bd550afcbfbbaddd84dbfec1be2b06c054b81c83835ce616", attr.getUrls().getCustomerPortal(), "Data attributes urls customer portal should be equal"),
+                () -> assertEquals("https://codewriter.lemonsqueezy.com/billing/421953/update?expires=1718892525&user=2476730&signature=5957cb1a330927b75adc04115bf012a29daff112d62f4576198a1fc3d44fe82e", attr.getUrls().getCustomerPortalUpdateSubscription(), "Data attributes urls customer portal update subscription should be equal")
         );
     }
 
@@ -235,6 +247,7 @@ class WebhookMessageTest extends BaseTest {
                 () -> assertEquals("paid", attr.getStatus(), "Data attributes status should be equal"),
                 () -> assertEquals("Paid", attr.getStatusFormatted(), "Data attributes status formatted should be equal"),
                 () -> assertFalse(attr.getRefunded(), "Data attributes refunded should be false"),
+                () -> assertNull(attr.getRefundedAt(), "Data attributes refunded at should be null"),
                 () -> assertEquals(1999, attr.getSubtotal(), "Data attributes sub total should be equal"),
                 () -> assertEquals(0, attr.getDiscountTotal(), "Data attributes discount total should be equal"),
                 () -> assertTrue(attr.getTaxInclusive(), "Data attributes tax inclusive should be true"),
@@ -249,7 +262,11 @@ class WebhookMessageTest extends BaseTest {
                 () -> assertEquals("\u20ac19.99", attr.getTotalformatted(), "Data attributes total formatted should be equal"),
                 () -> assertEquals(LocalDateTime.parse("2024-06-19T14:08:13.000000"), attr.getCreatedAt(), "Data attributes created at should be equal"),
                 () -> assertEquals(LocalDateTime.parse("2024-06-19T14:08:15.000000"), attr.getUpdatedAt(), "Data attributes updated at should be equal"),
-                () -> assertTrue(attr.getTestMode(), "Data attributes test mode should be true")
+                () -> assertTrue(attr.getTestMode(), "Data attributes test mode should be true"),
+
+                // Data Attributes URLs
+                () -> assertNotNull(attr.getUrls(), "Data attributes urls should not be null"),
+                () -> assertEquals("https://app.lemonsqueezy.com/my-orders/62acd246-fb68-46f0-94d1-5879182773b7/subscription-invoice/1134198?signature=db595e2150c25df90634bb92008059e4efe71fb893a0212254e4e1f557d31825", attr.getUrls().getInvoiceUrl(), "Data attributes urls invoice url should be equal")
         );
     }
 }
