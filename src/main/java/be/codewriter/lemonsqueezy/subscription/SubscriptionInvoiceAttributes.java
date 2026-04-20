@@ -1,9 +1,12 @@
 package be.codewriter.lemonsqueezy.subscription;
 
 import be.codewriter.lemonsqueezy.BaseAttributes;
+import be.codewriter.lemonsqueezy.generic.Urls;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.time.LocalDateTime;
 
 /**
  * https://docs.lemonsqueezy.com/api/subscription-invoices#the-subscription-invoice-object
@@ -36,6 +39,8 @@ public class SubscriptionInvoiceAttributes extends BaseAttributes {
     private String statusFormatted;
     @JsonProperty("refunded")
     private Boolean refunded;
+    @JsonProperty("refunded_at")
+    private LocalDateTime refundedAt;
     @JsonProperty("subtotal")
     private Double subtotal;
     @JsonProperty("subtotal_usd")
@@ -65,6 +70,8 @@ public class SubscriptionInvoiceAttributes extends BaseAttributes {
 
     @JsonProperty("test_mode")
     private Boolean testMode;
+    @JsonProperty("urls")
+    private Urls urls;
 
     public SubscriptionInvoiceAttributes() {
         // For JSON parsing
@@ -164,6 +171,14 @@ public class SubscriptionInvoiceAttributes extends BaseAttributes {
 
     public void setRefunded(Boolean refunded) {
         this.refunded = refunded;
+    }
+
+    public LocalDateTime getRefundedAt() {
+        return refundedAt;
+    }
+
+    public void setRefundedAt(LocalDateTime refundedAt) {
+        this.refundedAt = refundedAt;
     }
 
     public Double getSubtotal() {
@@ -276,5 +291,13 @@ public class SubscriptionInvoiceAttributes extends BaseAttributes {
 
     public void setTestMode(Boolean testMode) {
         this.testMode = testMode;
+    }
+
+    public Urls getUrls() {
+        return urls;
+    }
+
+    public void setUrls(Urls urls) {
+        this.urls = urls;
     }
 }
